@@ -1,0 +1,46 @@
+@startuml
+
+skinparam usecase {
+	BackgroundColor white
+	BorderColor black
+
+	ArrowColor black
+}
+
+(exp) as e1
+(exp) as e2
+(exp) as e3
+(sin) as sin
+(sigmoid) as sig
+(w1) as w1
+(w2) as w2
+(x2) as x2
+(+) as pe
+(+) as pf1
+(+) as pf2
+(x) as x
+(f1)
+(f2)
+
+
+w1 -up-> e1 : 1
+w2 -up-> x2 : 0
+x2 -> e2 : 0
+e1 -> pe : exp(w1)
+e2 -> pe : 0
+pe -up-> sin : exp(w1)
+pe -> e3 : exp(w1)
+sin -> pf1 : cos(exp(w1) + exp(2 w2)) exp(w1)
+e3 -> pf1 : exp(exp(w1) + exp(2 w2)) exp(w1)
+pf1 -> f1 : exp(w1) (exp(exp(w1) + exp(2 w2)) + cos(exp(w1) + exp(2 w2)))
+
+w1 --down-> x : 1
+w2 --down-> x : 0
+x -down-> pf2 : w2
+w1 -down-> sig : 1
+sig --> pf2 : exp(w1) / (1 + exp(w1))^2
+pf2 -> f2 : w2 + exp(w1) / (1 + exp(w1))^2
+
+
+
+@enduml

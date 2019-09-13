@@ -1,0 +1,1156 @@
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.10.12)  11 SEP 2019 18:36
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks15
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+) (./main.aux
+./main.aux:2: Missing \endcsname inserted.
+<to be read again> 
+                   \protect 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+./main.aux:2: Package amsmath Error: \vec allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.aux:2: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./main.aux:2: Extra \endcsname.
+<recently read> \endcsname 
+                           
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+I'm ignoring this, since I wasn't doing a \csname.
+
+./main.aux:2: Extra \else.
+\@ifundefined ... \expandafter \@firstoftwo \else 
+                                                  \expandafter \@secondoftwo...
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+I'm ignoring this; it doesn't match any \if.
+
+
+LaTeX Warning: Label `Computation graph for $\GenericError {(amsmath)          
+      }{Package amsmath Error: \vec allowed only in math mode}{See the amsmath 
+package documentation for explanation.}{You're in trouble here.  Try typing  <r
+eturn>  to proceed.
+               If that doesn't work, type  X <return>  to quit.}$' multiply def
+ined.
+
+./main.aux:2: Missing \endcsname inserted.
+<to be read again> 
+                   \gdef 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./main.aux:2: Undefined control sequence.
+\mathaccentV ...frozen@everymath {}$#5$}\macc@tmp 
+                                                  \ifnum \macc@depth =\@ne \...
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:2: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:2: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:2: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:2: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:2: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:2: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:2: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:2: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:2: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:2: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:2: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:2: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:2: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:2: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:2: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:2: Undefined control sequence.
+\mathaccentV ...ested \fi #2#3#4{#5}\macc@nucleus 
+                                                  \else \@xp \nonmatherr@ \c...
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:2: Extra \endcsname.
+\@namedef ...xpandafter \def \csname #1\endcsname 
+                                                  
+l.2 ...raph for $\mathaccentV {vec}17E{f}$}{{}{1}}
+                                                  
+I'm ignoring this, since I wasn't doing a \csname.
+
+./main.aux:3: Missing \endcsname inserted.
+<to be read again> 
+                   \protect 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+./main.aux:3: Package amsmath Error: \vec allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./main.aux:3: Extra \endcsname.
+<recently read> \endcsname 
+                           
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+I'm ignoring this, since I wasn't doing a \csname.
+
+./main.aux:3: Extra \else.
+\@ifundefined ... \expandafter \@firstoftwo \else 
+                                                  \expandafter \@secondoftwo...
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+I'm ignoring this; it doesn't match any \if.
+
+
+LaTeX Warning: Label `Forward gradient decent on $\GenericError {(amsmath)     
+           }{Package amsmath Error: \vec allowed only in math mode}{See the ams
+math package documentation for explanation.}{You're in trouble here.  Try typin
+g  <return>  to proceed.
+               If that doesn't work, type  X <return>  to quit.}$ for $w1$' mul
+tiply defined.
+
+./main.aux:3: Missing \endcsname inserted.
+<to be read again> 
+                   \gdef 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./main.aux:3: Undefined control sequence.
+\mathaccentV ...frozen@everymath {}$#5$}\macc@tmp 
+                                                  \ifnum \macc@depth =\@ne \...
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:3: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:3: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:3: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:3: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:3: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:3: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:3: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:3: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:3: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:3: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:3: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:3: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:3: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:3: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:3: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:3: Undefined control sequence.
+\mathaccentV ...ested \fi #2#3#4{#5}\macc@nucleus 
+                                                  \else \@xp \nonmatherr@ \c...
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:3: Extra \endcsname.
+\@namedef ...xpandafter \def \csname #1\endcsname 
+                                                  
+l.3 ...$\mathaccentV {vec}17E{f}$ for $w1$}{{}{1}}
+                                                  
+I'm ignoring this, since I wasn't doing a \csname.
+
+./main.aux:5: Missing \endcsname inserted.
+<to be read again> 
+                   \protect 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./main.aux:5: Extra \endcsname.
+<recently read> \endcsname 
+                           
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+I'm ignoring this, since I wasn't doing a \csname.
+
+./main.aux:5: Extra \else.
+\@ifundefined ... \expandafter \@firstoftwo \else 
+                                                  \expandafter \@secondoftwo...
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+I'm ignoring this; it doesn't match any \if.
+
+
+LaTeX Warning: Label `Forward gradient decent on $\GenericError {(amsmath)     
+           }{Package amsmath Error: \vec allowed only in math mode}{See the ams
+math package documentation for explanation.}{You're in trouble here.  Try typin
+g  <return>  to proceed.
+               If that doesn't work, type  X <return>  to quit.}$ for $w2$' mul
+tiply defined.
+
+./main.aux:5: Missing \endcsname inserted.
+<to be read again> 
+                   \gdef 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./main.aux:5: Undefined control sequence.
+\mathaccentV ...frozen@everymath {}$#5$}\macc@tmp 
+                                                  \ifnum \macc@depth =\@ne \...
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:5: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:5: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:5: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:5: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:5: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:5: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:5: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:5: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:5: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:5: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:5: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:5: Undefined control sequence.
+\macc@adjust ->\dimen@ \macc@kerna 
+                                   \advance \dimen@ \macc@kernb \kern -\dimen@ 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:5: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:5: Undefined control sequence.
+\macc@adjust ...erna \advance \dimen@ \macc@kernb 
+                                                  \kern -\dimen@ 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./main.aux:5: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./main.aux:5: Undefined control sequence.
+\mathaccentV ...ested \fi #2#3#4{#5}\macc@nucleus 
+                                                  \else \@xp \nonmatherr@ \c...
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.aux:5: Extra \endcsname.
+\@namedef ...xpandafter \def \csname #1\endcsname 
+                                                  
+l.5 ...$\mathaccentV {vec}17E{f}$ for $w2$}{{}{1}}
+                                                  
+I'm ignoring this, since I wasn't doing a \csname.
+
+./main.aux:6: Missing \endcsname inserted.
+<to be read again> 
+                   \protect 
+l.6 ...ecent on $\mathaccentV {vec}17E{f}$}{{}{2}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+./main.aux:6: Package amsmath Error: \vec allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 ...ecent on $\mathaccentV {vec}17E{f}$}{{}{2}}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./main.aux:6: Extra \endcsname.
+<recently read> \endcsname 
+                           
+l.6 ...ecent on $\mathaccentV {vec}17E{f}$}{{}{2}}
+                                                  
+I'm ignoring this, since I wasn't doing a \csname.
+
+./main.aux:6: Extra \else.
+\@ifundefined ... \expandafter \@firstoftwo \else 
+                                                  \expandafter \@secondoftwo...
+l.6 ...ecent on $\mathaccentV {vec}17E{f}$}{{}{2}}
+                                                  
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 1203 strings out of 493007
+ 14224 string characters out of 6136718
+ 77390 words of memory out of 5000000
+ 5224 multiletter control sequences out of 15000+600000
+ 4102 words of font info for 17 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 27i,3n,20p,221b,77s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+No pages of output.

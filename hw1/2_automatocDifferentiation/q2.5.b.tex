@@ -1,0 +1,25 @@
+With:
+\begin{align*}
+    f_1(1,2) &= 24521.662861313 \\
+    f_2(1,2) &= 2.73105857863 \\
+    f_1(1.01,2) &= 25200.8058793246 \\
+    f_2(1.01,2) &= 2.75302014923886 \\
+    f_1(1,2.01) &= 26411.9854338567 \\
+    f_2(1,2.01) &= 2.74105857863
+\end{align*}
+We have:
+\begin{align*}
+    \frac{\partial \vec{f}}{\partial \vec{w}} &=
+    \begin{bmatrix}
+        \frac{f_1(1 + \Delta,2) - f_1(1,2)}{\Delta} & \frac{f_1(1,2 + \Delta) - f_1(1,2)}{\Delta} \\
+        \frac{f_2(1 + \Delta,2) - f_2(1,2)}{\Delta} & \frac{f_2(1,2 + \Delta) - f_2(1,2)}{\Delta}
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+        67914.3018011622 & 189032.25725437 \\
+        2.19615706088527 & 0.999999999999979
+    \end{bmatrix} \\
+\end{align*}
+
+
+

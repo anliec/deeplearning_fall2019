@@ -1,0 +1,9 @@
+
+\paragraph{}
+If $G$ is a DAG, then according to the lemma, at least one node has on input edges.
+If we took such a node out of the graph as well as all the edges going from this node, the remaning graph would be a DAG
+too (we only removed edges, we can't create cycle be removing edges).
+We can now repeat the previous step on the newly created graph, until we got an empty graph.
+
+The order in which we took the node out is a possible topological ordering.
+

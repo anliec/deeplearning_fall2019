@@ -1,0 +1,46 @@
+@startuml
+
+skinparam usecase {
+	BackgroundColor white
+	BorderColor black
+
+	ArrowColor black
+}
+
+(exp) as e1
+(exp) as e2
+(exp) as e3
+(sin) as sin
+(sigmoid) as sig
+(w1) as w1
+(w2) as w2
+(x2) as x2
+(+) as pe
+(+) as pf1
+(+) as pf2
+(x) as x
+(f1)
+(f2)
+
+
+w1 -up-> e1 
+w2 -up-> x2 
+x2 -> e2 
+e1 -> pe 
+e2 -> pe 
+pe -up-> sin 
+pe -> e3 
+sin -> pf1 
+e3 -> pf1 
+pf1 -> f1
+
+w1 --down-> x 
+w2 --down-> x 
+x -down-> pf2 
+w1 -down-> sig 
+sig --> pf2 
+pf2 -> f2
+
+
+
+@enduml
