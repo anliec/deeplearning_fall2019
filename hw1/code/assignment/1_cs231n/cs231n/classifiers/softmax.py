@@ -25,18 +25,27 @@ def softmax_loss_vectorized(W, X, y, reg):
     # here, it is easy to run into numeric instability. Don't forget the        #
     # regularization!                                                           #
     #############################################################################
-    z = W @ X
-    z -= np.max(z)
+    z = W @ X  # == X.T @ W.T
+    # print("z", np.isnan(z).any(), z.min(), z.max())
+    z -= np.max(z, axis=0, keepdims=True)
+    # print("z", np.isnan(z).any(), z.min(), z.max())
     e = np.exp(z)
-    s = np.sum(e, axis=0)
-    p = np.divide(e, s)
-    t = p[y, np.arange(len(y))]
+    # print("e", np.isnan(e).any(), e.min(), e.max())
+    s = np.sum(e, axis=0, keepdims=True)
+    # print("s", np.isnan(s).any(), s.min(), s.max())
+    p = e / s
+    # print("p", np.isnan(p).any(), np.isnan(p).sum(), p.shape)
+    t = p[y, range(len(y))]
+    # print("t", np.isnan(t).any())
     w_norm = np.linalg.norm(W, 2)
+    # print("w_norm", np.isnan(w_norm).any())
     loss = - np.average(np.log(t)) + w_norm * reg
+    assert not np.isnan(loss)
     # TODO: compute gradient decent
-    y_categorical = np.zeros_like(p)
-    y_categorical[y, np.arange(len(y))] = 1
-    dW = np.matmul((p - y_categorical), X.T) + reg / w_norm * 2 * W
+    dz = p
+    dz[y, range(len(y))] -= 1
+    dz /= len(y)
+    dW = (dz @ X.T) + W * (reg / w_norm)
     #############################################################################
     #                          END OF YOUR CODE                                 #
     #############################################################################

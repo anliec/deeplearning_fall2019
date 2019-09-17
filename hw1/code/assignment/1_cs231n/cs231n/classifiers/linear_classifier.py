@@ -46,7 +46,12 @@ class LinearClassifier:
             # Hint: Use np.random.choice to generate indices. Sampling with         #
             # replacement is faster than sampling without replacement.              #
             #########################################################################
-            pass
+            indexes = np.random.choice(dim, size=batch_size, replace=True)
+            # indexes = np.arange(batch_size)
+            X_batch = X[:, indexes]
+            y_batch = y[indexes]
+            # print(it, ": X_batch", np.isnan(X_batch).sum(), "W", np.isnan(self.W).sum())
+            # print(it, ": W", self.W.min(), self.W.max(), self.W.mean())
             #########################################################################
             #                       END OF YOUR CODE                                #
             #########################################################################
@@ -60,7 +65,9 @@ class LinearClassifier:
             # TODO:                                                                 #
             # Update the weights using the gradient and the learning rate.          #
             #########################################################################
-            pass
+            self.W -= grad * learning_rate * 1e-5
+            # print(it, ": W", np.isnan(self.W).sum(), "grad", np.isnan(grad).sum())
+            # print("loss", loss)
             #########################################################################
             #                       END OF YOUR CODE                                #
             #########################################################################
@@ -88,7 +95,7 @@ class LinearClassifier:
         # TODO:                                                                   #
         # Implement this method. Store the predicted labels in y_pred.            #
         ###########################################################################
-        pass
+        y_pred = np.argmax(self.W @ X, axis=0)
         ###########################################################################
         #                           END OF YOUR CODE                              #
         ###########################################################################
