@@ -1,0 +1,83 @@
+\documentclass[11pt,english]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% paper size & margins
+\usepackage{fullpage}
+\usepackage[showframe=false,margin=1in]{geometry}
+\parindent=0pt
+
+% font management
+\usepackage{relsize}
+\usepackage[T1]{fontenc} % for properly hyphenating words with accented chars
+\usepackage[latin1]{inputenc}
+\usepackage{babel}
+
+% math
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{textcomp}
+\usepackage{stmaryrd}
+\usepackage{upgreek}
+\usepackage{bm}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+
+% assorted
+\usepackage{url}
+\usepackage{breakurl}
+\usepackage{xspace}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{afterpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\hide}[1]{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title / Author
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{CS7643: Deep Learning \\
+Fall 2019\\ HW1 Solutions}
+\author{Nicolas \textsc{Six}}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Gradient Descent - 1}
+
+\begin{align*}
+\frac{\partial \left( f \left( w^{(t)} \right) + \left\langle w - w^{(t)} , \nabla f \left( w^{(t)} \right) \right\rangle + \frac{\lambda}{2} \| w - w^{(t)} \| ^2 \right) }{\partial w} &= 0 \\
+\frac{\partial \left\langle w , \nabla f \left( w^{(t)} \right) \right\rangle  }{\partial w} + \lambda \| w - w^{(t)} \| &= 0 \\
+\| w - w^{(t)} \| &= - \frac{1}{\lambda} \frac{\partial \left\langle w , \nabla f \left( w^{(t)} \right) \right\rangle  }{\partial w} \\
+\end{align*}
+
+So the solution is on a sphere of center $w^{(t)}$ and radius $\frac{1}{\lambda} \frac{\partial \left\langle w , \nabla f \left( w^{(t)} \right) \right\rangle  }{\partial w}$. We are looking 
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
