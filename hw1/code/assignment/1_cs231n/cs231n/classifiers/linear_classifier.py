@@ -65,7 +65,7 @@ class LinearClassifier:
             # TODO:                                                                 #
             # Update the weights using the gradient and the learning rate.          #
             #########################################################################
-            self.W -= grad * learning_rate * 1e-5
+            self.W -= grad * learning_rate
             # print(it, ": W", np.isnan(self.W).sum(), "grad", np.isnan(grad).sum())
             # print("loss", loss)
             #########################################################################
