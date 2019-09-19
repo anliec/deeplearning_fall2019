@@ -20,7 +20,8 @@ class TwoLayerNN(nn.Module):
         #############################################################################
         # TODO: Initialize anything you need for the forward pass
         #############################################################################
-        pass
+        self.lin1 = nn.Linear(in_features=np.prod(im_size), out_features=hidden_dim)
+        self.lin2 = nn.Linear(in_features=hidden_dim, out_features=n_classes)
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################
@@ -41,11 +42,13 @@ class TwoLayerNN(nn.Module):
             A torch Variable of size (N, n_classes) specifying the score
             for each example and category.
         '''
-        scores = None
+        # scores = None
         #############################################################################
         # TODO: Implement the forward pass. This should take very few lines of code.
         #############################################################################
-        pass
+        n, c, h, w = images.shape
+        scores = nn.functional.relu(self.lin1(images.reshape((n, -1))))
+        scores = nn.functional.softmax(self.lin2(scores), dim=1)
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################

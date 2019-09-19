@@ -4,13 +4,13 @@
 #       number of epochs, weigh decay factor, momentum, batch size, learning 
 #       rate mentioned here to achieve good performance
 #############################################################################
-python -u train.py \
+python3 -u train.py \
     --model softmax \
-    --epochs 1 \
-    --weight-decay 0.0 \
-    --momentum 0.0 \
-    --batch-size 512 \
-    --lr 0.01 | tee softmax.log
+    --epochs 5 \
+    --weight-decay 0.0001 \
+    --momentum 0.9 \
+    --batch-size 2048 \
+    --lr 0.001 | tee softmax.log
 #############################################################################
 #                             END OF YOUR CODE                              #
 #############################################################################

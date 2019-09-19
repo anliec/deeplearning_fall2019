@@ -12,7 +12,7 @@ from torch.autograd import Variable
 from cifar10 import CIFAR10
 
 # You should implement these (softmax.py, twolayernn.py, convnet.py)
-import models.softmax 
+import models.softmax
 import models.twolayernn
 import models.convnet
 import models.mymodel
@@ -68,23 +68,23 @@ cifar10_mean_color = [0.49131522, 0.48209435, 0.44646862]
 # std dev of color across training images
 cifar10_std_color = [0.01897398, 0.03039277, 0.03872553]
 transform = transforms.Compose([
-                 transforms.ToTensor(),
-                 transforms.Normalize(cifar10_mean_color, cifar10_std_color),
-            ])
+    transforms.ToTensor(),
+    transforms.Normalize(cifar10_mean_color, cifar10_std_color),
+])
 # Datasets
 train_dataset = CIFAR10(args.cifar10_dir, split='train', download=True,
                         transform=transform)
 val_dataset = CIFAR10(args.cifar10_dir, split='val', download=True,
-                        transform=transform)
+                      transform=transform)
 test_dataset = CIFAR10(args.cifar10_dir, split='test', download=True,
-                        transform=transform)
+                       transform=transform)
 # DataLoaders
 train_loader = torch.utils.data.DataLoader(train_dataset,
-                 batch_size=args.batch_size, shuffle=True, **kwargs)
+                                           batch_size=args.batch_size, shuffle=True, **kwargs)
 val_loader = torch.utils.data.DataLoader(val_dataset,
-                 batch_size=args.batch_size, shuffle=True, **kwargs)
+                                         batch_size=args.batch_size, shuffle=True, **kwargs)
 test_loader = torch.utils.data.DataLoader(test_dataset,
-                 batch_size=args.batch_size, shuffle=True, **kwargs)
+                                          batch_size=args.batch_size, shuffle=True, **kwargs)
 
 # Load the model
 if args.model == 'softmax':
@@ -96,7 +96,7 @@ elif args.model == 'convnet':
                                n_classes)
 elif args.model == 'mymodel':
     model = models.mymodel.MyModel(im_size, args.hidden_dim,
-                               args.kernel_size, n_classes)
+                                   args.kernel_size, n_classes)
 else:
     raise Exception('Unknown model {}'.format(args.model))
 # cross-entropy loss function
@@ -108,7 +108,7 @@ if args.cuda:
 # TODO: Initialize an optimizer from the torch.optim package using the
 # appropriate hyperparameters found in args. This only requires one line.
 #############################################################################
-pass
+optim = torch.optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay)
 #############################################################################
 #                             END OF YOUR CODE                              #
 #############################################################################
@@ -131,7 +131,10 @@ def train(epoch):
         # TODO: Update the parameters in model using the optimizer from above.
         # This only requires a couple lines of code.
         #############################################################################
-        pass
+        output = model(images)
+        loss = criterion(output, targets)
+        loss.backward()
+        optim.step()
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################
@@ -144,6 +147,7 @@ def train(epoch):
                   'Train Loss: {:.6f}\tVal Loss: {:.6f}\tVal Acc: {}'.format(
                 epoch, examples_this_epoch, len(train_loader.dataset),
                 epoch_progress, train_loss, val_loss, val_acc))
+
 
 def evaluate(split, verbose=False, n_batches=None):
     '''
@@ -188,4 +192,3 @@ evaluate('test', verbose=True)
 torch.save(model, args.model + '.pt')
 # Later you can call torch.load(file) to re-load the trained model into python
 # See http://pytorch.org/docs/master/notes/serialization.html for more details
-

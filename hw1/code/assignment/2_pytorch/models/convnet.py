@@ -19,7 +19,9 @@ class CNN(nn.Module):
         #############################################################################
         # TODO: Initialize anything you need for the forward pass
         #############################################################################
-        pass
+        self.conv1 = nn.Conv2d(in_channels=3, out_channels=hidden_dim, kernel_size=(kernel_size, kernel_size),
+                               padding=int(kernel_size/2))
+        self.lin1 = nn.Linear(in_features=np.prod(im_size[1:]) * hidden_dim, out_features=n_classes)
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################
@@ -40,11 +42,13 @@ class CNN(nn.Module):
             A torch Variable of size (N, n_classes) specifying the score
             for each example and category.
         '''
-        scores = None
+        # scores = None
         #############################################################################
         # TODO: Implement the forward pass. This should take few lines of code.
         #############################################################################
-        pass
+        scores = nn.functional.relu(self.conv1(images))
+        n = images.shape[0]
+        scores = nn.functional.softmax(self.lin1(scores.reshape((n, -1))), dim=1)
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################

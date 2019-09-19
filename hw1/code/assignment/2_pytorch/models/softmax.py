@@ -18,7 +18,7 @@ class Softmax(nn.Module):
         #############################################################################
         # TODO: Initialize anything you need for the forward pass
         #############################################################################
-        pass
+        self.linear = nn.Linear(in_features=np.prod(im_size), out_features=n_classes)
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################
@@ -39,11 +39,13 @@ class Softmax(nn.Module):
             A torch Variable of size (N, n_classes) specifying the score
             for each example and category.
         '''
-        scores = None
+        # scores = None
         #############################################################################
         # TODO: Implement the forward pass. This should take very few lines of code.
         #############################################################################
-        pass
+        n, c, h, w = images.shape
+        scores = self.linear(images.reshape((n, -1)))
+        scores = torch.nn.functional.softmax(scores, dim=1)
         #############################################################################
         #                             END OF YOUR CODE                              #
         #############################################################################
