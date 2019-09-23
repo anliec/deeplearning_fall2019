@@ -4,15 +4,16 @@
 #       number of epochs, weigh decay factor, momentum, batch size, learning 
 #       rate mentioned here to achieve good performance
 #############################################################################
-python -u train.py \
+python3 -u train.py \
     --model mymodel \
     --kernel-size 1 \
-    --hidden-dim 10 \
+    --hidden-dim 20 \
     --epochs 1 \
-    --weight-decay 0.0 \
-    --momentum 0.0 \
-    --batch-size 512 \
-    --lr 0.01 | tee mymodel.log
+    --weight-decay 0.0003 \
+    --momentum 0.9 \
+    --batch-size 1 \
+    --lr 0.025 \
+    --model_state_dict /home/nicolas/darts/cnn/hw_cifar10_state.pt | tee mymodel.log
 #############################################################################
 #                             END OF YOUR CODE                              #
 #############################################################################

@@ -33,6 +33,8 @@ parser.add_argument('--epochs', type=int, metavar='N',
 parser.add_argument('--model',
                     choices=['softmax', 'convnet', 'twolayernn', 'mymodel'],
                     help='which model to train/evaluate')
+parser.add_argument('--model_state_dict', type=str, default=None,
+                    help="pre-trained weights to load")
 parser.add_argument('--hidden-dim', type=int,
                     help='number of hidden features/activations')
 parser.add_argument('--kernel-size', type=int,
@@ -97,6 +99,8 @@ elif args.model == 'convnet':
 elif args.model == 'mymodel':
     model = models.mymodel.MyModel(im_size, args.hidden_dim,
                                    args.kernel_size, n_classes)
+    if args.model_state_dict is not None:
+        model.load_state_dict(torch.load(args.model_state_dict))
 else:
     raise Exception('Unknown model {}'.format(args.model))
 # cross-entropy loss function
@@ -109,6 +113,7 @@ if args.cuda:
 # appropriate hyperparameters found in args. This only requires one line.
 #############################################################################
 optim = torch.optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay)
+scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optim, float(args.epochs))
 #############################################################################
 #                             END OF YOUR CODE                              #
 #############################################################################
@@ -131,9 +136,18 @@ def train(epoch):
         # TODO: Update the parameters in model using the optimizer from above.
         # This only requires a couple lines of code.
         #############################################################################
+        model.train()
+        if batch_idx == 0:
+            scheduler.step()
+            # if args.model == 'mymodel':
+            #     model.drop_path_prob = args.drop_path_prob * epoch / args.epochs
         output = model(images)
         loss = criterion(output, targets)
+        if args.model == 'mymodel' and model._auxiliary:
+            loss_aux = criterion(model.last_logits_aux, targets)
+            loss += 0.4 * loss_aux
         loss.backward()
+        nn.utils.clip_grad_norm(model.parameters(), 5)
         optim.step()
         #############################################################################
         #                             END OF YOUR CODE                              #
