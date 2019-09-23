@@ -36,17 +36,18 @@ cifar10_mean_color = [0.49131522, 0.48209435, 0.44646862]
 cifar10_std_color = [0.01897398, 0.03039277, 0.03872553]
 
 transform = transforms.Compose([
-                 transforms.ToTensor(),
-                 transforms.Normalize(cifar10_mean_color, cifar10_std_color),
-            ])
+    transforms.ToTensor(),
+    transforms.Normalize(cifar10_mean_color, cifar10_std_color),
+])
 test_dataset = ChallengeData(args.test_dir, download=True,
-                        transform=transform)
+                             transform=transform)
 # Datasets
 test_loader = torch.utils.data.DataLoader(test_dataset,
-                 batch_size=args.test_batch_size, shuffle=False, **kwargs)
+                                          batch_size=args.test_batch_size, shuffle=False, **kwargs)
 
 if os.path.exists(args.model):
     model = torch.load(args.model)
+    model.drop_path_prob = 0.0
 else:
     print('Model path specified does not exst')
     sys.exit(1)
@@ -56,24 +57,25 @@ criterion = F.cross_entropy
 if args.cuda:
     model.cuda()
 
- 
+
 def evaluate():
     '''
     Compute loss on test data.
     '''
     model.eval()
     loader = test_loader
-    predictions = [] 
+    predictions = []
     for batch_i, batch in enumerate(loader):
         data = batch
         if args.cuda:
-            data= data.cuda()
+            data = data.cuda()
         data = Variable(data, volatile=True)
         output = model(data)
         pred = output.data.max(1, keepdim=True)[1]
         predictions += pred.reshape(-1).tolist()
         print('Batch:{}'.format(batch_i))
     return predictions
+
 
 predictions = evaluate()
 

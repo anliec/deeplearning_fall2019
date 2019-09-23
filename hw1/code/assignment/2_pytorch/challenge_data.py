@@ -9,6 +9,7 @@ import os.path
 import errno
 import numpy as np
 import sys
+
 if sys.version_info[0] == 2:
     import cPickle as pickle
 else:
@@ -16,6 +17,7 @@ else:
 
 import torch.utils.data as data
 import urllib.request
+
 
 class ChallengeData(data.Dataset):
     """`CIFAR10 <https://www.cs.toronto.edu/~kriz/cifar.html>`_ Dataset.
@@ -28,22 +30,21 @@ class ChallengeData(data.Dataset):
             puts it in root directory. If dataset is already downloaded, it is not
             downloaded again.
     """
-    url = "https://s3.amazonaws.com/cs7643-fall2018/test_images.npy"
+    url = "https://s3.amazonaws.com/cs7643-fall2019/test_images.npy"
     filename = "test_images.npy"
-
 
     def __init__(self, root,
                  transform=None, download=False):
         self.root = os.path.expanduser(root)
         self.transform = transform
-        
+
         if download:
             self.download()
 
         # now load the picked numpy arrays
         file = os.path.join(self.root, self.filename)
         self.test_data = np.load(file)
-        
+
     def __getitem__(self, index):
         """
         Args:
