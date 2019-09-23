@@ -147,7 +147,7 @@ def train(epoch):
             loss_aux = criterion(model.last_logits_aux, targets)
             loss += 0.4 * loss_aux
         loss.backward()
-        nn.utils.clip_grad_norm(model.parameters(), 5)
+        # nn.utils.clip_grad_norm_(model.parameters(), 5)
         optim.step()
         #############################################################################
         #                             END OF YOUR CODE                              #
@@ -205,5 +205,6 @@ evaluate('test', verbose=True)
 
 # Save the model (architecture and weights)
 torch.save(model, args.model + '.pt')
+torch.save(model.state_dict(), args.model + '_state.pt')
 # Later you can call torch.load(file) to re-load the trained model into python
 # See http://pytorch.org/docs/master/notes/serialization.html for more details
