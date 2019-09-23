@@ -11,7 +11,7 @@ python3 -u train.py \
     --epochs 1 \
     --weight-decay 0.0003 \
     --momentum 0.9 \
-    --batch-size 96 \
+    --batch-size 48 \
     --lr 0.025 \
     --model_state_dict hw_cifar10_state.pt | tee mymodel.log
 #############################################################################

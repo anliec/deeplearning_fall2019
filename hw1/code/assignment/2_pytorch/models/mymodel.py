@@ -2,6 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from collections import namedtuple
 
 OPS = {
     'none': lambda C, stride, affine: Zero(stride),
@@ -20,6 +21,13 @@ OPS = {
         nn.BatchNorm2d(C, affine=affine)
     ),
 }
+Genotype = namedtuple('Genotype', 'normal normal_concat reduce reduce_concat')
+DARTS = Genotype(normal=[('sep_conv_3x3', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 0), ('sep_conv_3x3', 1),
+                         ('sep_conv_3x3', 1), ('skip_connect', 0), ('skip_connect', 0), ('dil_conv_3x3', 2)],
+                 normal_concat=[2, 3, 4, 5],
+                 reduce=[('max_pool_3x3', 0), ('max_pool_3x3', 1), ('skip_connect', 2), ('max_pool_3x3', 1),
+                         ('max_pool_3x3', 0), ('skip_connect', 2), ('skip_connect', 2), ('max_pool_3x3', 1)],
+                 reduce_concat=[2, 3, 4, 5])
 
 
 class ReLUConvBN(nn.Module):
@@ -211,21 +219,12 @@ class MyModel(nn.Module):
         #############################################################################
         # TODO: Initialize anything you need for the forward pass
         #############################################################################
-        from collections import namedtuple
         layers = 20
         self._layers = layers
         self._auxiliary = True
         self.last_logits_aux = None
         C = 36
         self.drop_path_prob = 0.2
-        Genotype = namedtuple('Genotype', 'normal normal_concat reduce reduce_concat')
-        genotype = Genotype(normal=[('sep_conv_3x3', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 0), ('sep_conv_3x3', 1),
-                                    ('sep_conv_3x3', 1), ('skip_connect', 0), ('skip_connect', 0), ('dil_conv_3x3', 2)],
-                            normal_concat=[2, 3, 4, 5],
-                            reduce=[('max_pool_3x3', 0), ('max_pool_3x3', 1), ('skip_connect', 2), ('max_pool_3x3', 1),
-                                    ('max_pool_3x3', 0), ('skip_connect', 2), ('skip_connect', 2), ('max_pool_3x3', 1)],
-                            reduce_concat=[2, 3, 4, 5])
-        self.genotype = genotype
 
         stem_multiplier = 3
         C_curr = stem_multiplier * C
@@ -243,7 +242,7 @@ class MyModel(nn.Module):
                 reduction = True
             else:
                 reduction = False
-            cell = Cell(genotype, C_prev_prev, C_prev, C_curr, reduction, reduction_prev)
+            cell = Cell(DARTS, C_prev_prev, C_prev, C_curr, reduction, reduction_prev)
             reduction_prev = reduction
             self.cells += [cell]
             C_prev_prev, C_prev = C_prev, cell.multiplier * C_curr
