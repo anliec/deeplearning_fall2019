@@ -168,26 +168,27 @@ def evaluate(split, verbose=False, n_batches=None):
     Compute loss on val or test data.
     '''
     model.eval()
-    loss = 0
-    correct = 0
-    n_examples = 0
-    if split == 'val':
-        loader = val_loader
-    elif split == 'test':
-        loader = test_loader
-    for batch_i, batch in enumerate(loader):
-        data, target = batch
-        if args.cuda:
-            data, target = data.cuda(), target.cuda()
-        data, target = Variable(data, volatile=True), Variable(target)
-        output = model(data)
-        loss += criterion(output, target, size_average=False).data
-        # predict the argmax of the log-probabilities
-        pred = output.data.max(1, keepdim=True)[1]
-        correct += pred.eq(target.data.view_as(pred)).cpu().sum()
-        n_examples += pred.size(0)
-        if n_batches and (batch_i >= n_batches):
-            break
+    with torch.no_grad():
+        loss = 0
+        correct = 0
+        n_examples = 0
+        if split == 'val':
+            loader = val_loader
+        elif split == 'test':
+            loader = test_loader
+        for batch_i, batch in enumerate(loader):
+            data, target = batch
+            if args.cuda:
+                data, target = data.cuda(), target.cuda()
+            data, target = Variable(data, volatile=True), Variable(target)
+            output = model(data)
+            loss += criterion(output, target, size_average=False).data
+            # predict the argmax of the log-probabilities
+            pred = output.data.max(1, keepdim=True)[1]
+            correct += pred.eq(target.data.view_as(pred)).cpu().sum()
+            n_examples += pred.size(0)
+            if n_batches and (batch_i >= n_batches):
+                break
 
     loss /= n_examples
     acc = 100. * correct / n_examples

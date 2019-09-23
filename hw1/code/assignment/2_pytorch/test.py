@@ -65,15 +65,16 @@ def evaluate():
     model.eval()
     loader = test_loader
     predictions = []
-    for batch_i, batch in enumerate(loader):
-        data = batch
-        if args.cuda:
-            data = data.cuda()
-        data = Variable(data, volatile=True)
-        output = model(data)
-        pred = output.data.max(1, keepdim=True)[1]
-        predictions += pred.reshape(-1).tolist()
-        print('Batch:{}'.format(batch_i))
+    with torch.no_grad():
+        for batch_i, batch in enumerate(loader):
+            data = batch
+            if args.cuda:
+                data = data.cuda()
+            # data = Variable(data)
+            output = model(data)
+            pred = output.data.max(1, keepdim=True)[1]
+            predictions += pred.reshape(-1).tolist()
+            print('Batch:{}'.format(batch_i))
     return predictions
 
 
