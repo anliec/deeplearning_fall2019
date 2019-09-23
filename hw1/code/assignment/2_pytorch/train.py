@@ -113,7 +113,7 @@ if args.cuda:
 # appropriate hyperparameters found in args. This only requires one line.
 #############################################################################
 optim = torch.optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay)
-scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optim, float(args.epochs))
+# scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optim, float(args.epochs))
 #############################################################################
 #                             END OF YOUR CODE                              #
 #############################################################################
@@ -137,17 +137,17 @@ def train(epoch):
         # This only requires a couple lines of code.
         #############################################################################
         model.train()
-        if batch_idx == 0:
-            scheduler.step()
-            # if args.model == 'mymodel':
-            #     model.drop_path_prob = args.drop_path_prob * epoch / args.epochs
+        # if batch_idx == 0:
+        #     scheduler.step()
+        #     if args.model == 'mymodel':
+        #         model.drop_path_prob = args.drop_path_prob * epoch / args.epochs
         output = model(images)
         loss = criterion(output, targets)
         if args.model == 'mymodel' and model._auxiliary:
             loss_aux = criterion(model.last_logits_aux, targets)
             loss += 0.4 * loss_aux
         loss.backward()
-        nn.utils.clip_grad_norm(model.parameters(), 5)
+        # nn.utils.clip_grad_norm(model.parameters(), 5)
         optim.step()
         #############################################################################
         #                             END OF YOUR CODE                              #
