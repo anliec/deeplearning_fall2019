@@ -13,7 +13,7 @@ python3 -u train.py \
     --momentum 0.9 \
     --batch-size 96 \
     --lr 0.025 \
-    --model_state_dict /home/nicolas/darts/cnn/hw_cifar10_state.pt | tee mymodel.log
+    --model_state_dict hw_cifar10_state.pt | tee mymodel.log
 #############################################################################
 #                             END OF YOUR CODE                              #
 #############################################################################
