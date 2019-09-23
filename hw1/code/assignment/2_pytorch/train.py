@@ -33,8 +33,8 @@ parser.add_argument('--epochs', type=int, metavar='N',
 parser.add_argument('--model',
                     choices=['softmax', 'convnet', 'twolayernn', 'mymodel'],
                     help='which model to train/evaluate')
-parser.add_argument('--model_state_dict', type=str, default=None,
-                    help="pre-trained weights to load")
+# parser.add_argument('--model_state_dict', type=str, default=None,
+#                     help="pre-trained weights to load")
 parser.add_argument('--hidden-dim', type=int,
                     help='number of hidden features/activations')
 parser.add_argument('--kernel-size', type=int,
@@ -99,8 +99,8 @@ elif args.model == 'convnet':
 elif args.model == 'mymodel':
     model = models.mymodel.MyModel(im_size, args.hidden_dim,
                                    args.kernel_size, n_classes)
-    if args.model_state_dict is not None:
-        model.load_state_dict(torch.load(args.model_state_dict))
+    # if args.model_state_dict is not None:
+    #     model.load_state_dict(torch.load(args.model_state_dict))
 else:
     raise Exception('Unknown model {}'.format(args.model))
 # cross-entropy loss function
@@ -136,16 +136,16 @@ def train(epoch):
         # TODO: Update the parameters in model using the optimizer from above.
         # This only requires a couple lines of code.
         #############################################################################
-        model.train()
+        # model.train()
         # if batch_idx == 0:
         #     scheduler.step()
         #     if args.model == 'mymodel':
         #         model.drop_path_prob = args.drop_path_prob * epoch / args.epochs
         output = model(images)
         loss = criterion(output, targets)
-        if args.model == 'mymodel' and model._auxiliary:
-            loss_aux = criterion(model.last_logits_aux, targets)
-            loss += 0.4 * loss_aux
+        # if args.model == 'mymodel' and model._auxiliary:
+        #     loss_aux = criterion(model.last_logits_aux, targets)
+        #     loss += 0.4 * loss_aux
         loss.backward()
         # nn.utils.clip_grad_norm_(model.parameters(), 5)
         optim.step()
@@ -168,27 +168,26 @@ def evaluate(split, verbose=False, n_batches=None):
     Compute loss on val or test data.
     '''
     model.eval()
-    with torch.no_grad():
-        loss = 0
-        correct = 0
-        n_examples = 0
-        if split == 'val':
-            loader = val_loader
-        elif split == 'test':
-            loader = test_loader
-        for batch_i, batch in enumerate(loader):
-            data, target = batch
-            if args.cuda:
-                data, target = data.cuda(), target.cuda()
-            data, target = Variable(data, volatile=True), Variable(target)
-            output = model(data)
-            loss += criterion(output, target, size_average=False).data
-            # predict the argmax of the log-probabilities
-            pred = output.data.max(1, keepdim=True)[1]
-            correct += pred.eq(target.data.view_as(pred)).cpu().sum()
-            n_examples += pred.size(0)
-            if n_batches and (batch_i >= n_batches):
-                break
+    loss = 0
+    correct = 0
+    n_examples = 0
+    if split == 'val':
+        loader = val_loader
+    elif split == 'test':
+        loader = test_loader
+    for batch_i, batch in enumerate(loader):
+        data, target = batch
+        if args.cuda:
+            data, target = data.cuda(), target.cuda()
+        data, target = Variable(data, volatile=True), Variable(target)
+        output = model(data)
+        loss += criterion(output, target, size_average=False).data
+        # predict the argmax of the log-probabilities
+        pred = output.data.max(1, keepdim=True)[1]
+        correct += pred.eq(target.data.view_as(pred)).cpu().sum()
+        n_examples += pred.size(0)
+        if n_batches and (batch_i >= n_batches):
+            break
 
     loss /= n_examples
     acc = 100. * correct / n_examples
