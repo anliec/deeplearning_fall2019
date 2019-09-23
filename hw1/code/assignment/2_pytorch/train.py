@@ -147,7 +147,7 @@ def train(epoch):
             loss_aux = criterion(model.last_logits_aux, targets)
             loss += 0.4 * loss_aux
         loss.backward()
-        # nn.utils.clip_grad_norm(model.parameters(), 5)
+        nn.utils.clip_grad_norm(model.parameters(), 5)
         optim.step()
         #############################################################################
         #                             END OF YOUR CODE                              #
