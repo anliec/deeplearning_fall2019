@@ -73,9 +73,18 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(cifar10_mean_color, cifar10_std_color),
 ])
+transform_train = transforms.Compose([
+    transforms.Pad(padding=5, padding_mode="edge"),
+    transforms.RandomHorizontalFlip(p=0.5),
+    transforms.RandomAffine(degrees=5, translate=(0.1, 0.1), scale=(0.9, 1.1), shear=3),
+    transforms.CenterCrop(size=im_size[1:]),
+    transforms.ColorJitter(brightness=0.2, contrast=0.25, saturation=0.2, hue=0.01),
+    transforms.ToTensor(),
+    transforms.Normalize(cifar10_mean_color, cifar10_std_color)
+])
 # Datasets
 train_dataset = CIFAR10(args.cifar10_dir, split='train', download=True,
-                        transform=transform)
+                        transform=transform_train)
 val_dataset = CIFAR10(args.cifar10_dir, split='val', download=True,
                       transform=transform)
 test_dataset = CIFAR10(args.cifar10_dir, split='test', download=True,
@@ -137,10 +146,6 @@ def train(epoch):
         # This only requires a couple lines of code.
         #############################################################################
         model.train()
-        # if batch_idx == 0:
-        #     scheduler.step()
-        #     if args.model == 'mymodel':
-        #         model.drop_path_prob = args.drop_path_prob * epoch / args.epochs
         output = model(images)
         loss = criterion(output, targets)
         if args.model == 'mymodel' and model._auxiliary:
