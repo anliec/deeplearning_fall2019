@@ -1,0 +1,43 @@
+
+If this function has a minimum, it has to be when its partial derivative regarding to $\vec{w}$ is null.
+In addition, as the this function is convex, so admit only one point where $\vec{w}$ is null, and so only one extrema.
+As this function is clearly unbounded from above this extrema is the global minimum.
+
+\begin{align*}
+    \frac{\partial \left( f\left( \vec{w^{(t)}} \right) +
+                           \left< \vec{w} - \vec{w^{(t)}}, \nabla f\left( \vec{w^{(t)}} \right) \right>
+                           + \frac{\lambda}{2} \left\| \vec{w} - \vec{w^{(t)}} \right\|^2 \right)
+    }{
+        \partial \vec{w}
+    }
+    &= 0 \\
+    \Leftrightarrow
+    \frac{\partial \left(
+                           \left< \vec{w}, \nabla f\left( \vec{w^{(t)}} \right) \right> \right) }
+    {\partial \vec{w}} +
+    \frac{\partial \left( \frac{\lambda}{2} \left< \vec{w} - \vec{w^{(t)}}, \vec{w} - \vec{w^{(t)}} \right> \right) }
+    {\partial \vec{w}}
+    &= 0 \\
+    \Leftrightarrow
+    \left< \frac{\partial\vec{w}}{\partial\vec{w}}, \nabla f\left( \vec{w^{(t)}} \right) \right> +
+    \lambda \left< \frac{\partial\vec{w}}{\partial\vec{w}}, \vec{w} - \vec{w^{(t)}} \right>
+    &= 0 \\
+    \Leftrightarrow
+    \left< \frac{\partial\vec{w}}{\partial\vec{w}}, \nabla f\left( \vec{w^{(t)}} \right) + \lambda \left( \vec{w} - \vec{w^{(t)}} \right) \right>
+    &= 0 \\
+    \Leftrightarrow
+    \nabla f\left( \vec{w^{(t)}} \right) + \lambda \left( \vec{w} - \vec{w^{(t)}} \right)
+    &= \vec{0} \\
+    \Leftrightarrow
+    \vec{w}
+    &= \vec{w^{(t)}} - \frac{1}{\lambda} \nabla f\left( \vec{w^{(t)}} \right) \\
+\end{align*}
+
+In conclusion we get the following:
+
+\begin{align*}
+    \vec{w^*} &= \vec{w^{(t)}} - \frac{1}{\lambda} \nabla f\left( \vec{w^{(t)}} \right) \\
+    \eta &= \frac{1}{\lambda}
+\end{align*}
+
+This show us that under our current set of assumption, the gradient descent is leading us the the optimal solution.

@@ -1,0 +1,26 @@
+
+Counter example:
+
+\begin{align*}
+    f(w) &= (w - \frac{1}{2})^2 + \frac{9}{4} \\
+    \frac{\partial f}{\partial w} \left( \frac{1}{2} \right) &=0
+\end{align*}
+
+Given that SGD is at the global optimal, $\frac{1}{2}$, the gradiant for both terms should be zero in order to guarantee
+this property.
+
+\begin{align*}
+    \frac{\partial \left( \frac{1}{2} (w-2)^2 \right)}{\partial w} \left( \frac{1}{2} \right)
+    &= (w-2) \left( \frac{1}{2} \right) \\
+    &= - \frac{3}{2} \\
+    &\neq 0 \\
+    \frac{\partial \left( \frac{1}{2} (w+1)^2 \right)}{\partial w} \left( \frac{1}{2} \right)
+    &= (w+1) \left( \frac{1}{2} \right) \\
+    &= \frac{3}{2} \\
+    &\neq 0 \\
+\end{align*}
+
+So in this case, for any $\eta$ not equal to zero, SGD will increase the overall loss function.
+
+In conclusion SGD doesn't guarantee to reach the global optimum after a given time under this conditions.
+

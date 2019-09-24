@@ -1,0 +1,56 @@
+
+We have:
+
+\begin{align*}
+    f\left( \vec{w^{*}} \right) &\geqslant f\left( \vec{w} \right) + \left< \vec{w^{*}} - \vec{w} , \nabla f\left( \vec{w} \right) \right> \\
+    \vec{w} &= \frac{1}{T} \sum^{T}_{t=1} \vec{w^{(t)}}
+\end{align*}
+
+So:
+
+\begin{align*}
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    f\left( \vec{w} \right) - f\left( \vec{w} \right) - \left< \vec{w^{*}} - \vec{w} , \nabla f\left( \vec{w} \right) \right>
+    \\
+    \Leftrightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \left< \vec{w} - \vec{w^{*}}, \nabla f\left( \vec{w} \right) \right>
+    \\
+    \Leftrightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \left< \frac{1}{T} \sum^{T}_{t=1} \vec{w^{(t)}} - \vec{w^{*}} , \nabla f\left( \frac{1}{T} \sum^{T}_{t=1} \vec{w^{(t)}} \right) \right>
+    \\
+    \Leftrightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \frac{1}{T} \sum^{T}_{t=1} \left< \vec{w^{(t)}} -  \vec{w^{*}}, \nabla f\left( \vec{w^{(t)}} \right) \right>
+    \\
+    \Rightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \frac{1}{T} \left( \frac{\left\| \vec{w^*} \right\|^2}{2 \eta} + \frac{\eta}{2} \sum^{T}_{t=1} \left\| \nabla f\left( \vec{w^{(t)}} \right) \right\|^2 \right)
+    \\
+    \Leftrightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \frac{1}{T} \left( \frac{B^2}{2 \eta} + \frac{\eta}{2} \sum^{T}_{t=1} \rho^2 \right)
+    \\
+    \Leftrightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \frac{1}{T} \left( \frac{B^2}{2 \eta} + \frac{\eta}{2} T \rho^2 \right)
+    \\
+    \Leftrightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \frac{B^2}{2 \eta T} + \frac{\eta}{2} \rho^2
+    \\
+    \Leftrightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \frac{B^2}{2 \sqrt{\frac{B^2}{\rho^2 T}} T} + \frac{\sqrt{\frac{B^2}{\rho^2 T}}}{2} \rho^2
+    \\
+    \Leftrightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \frac{B \rho}{2 \sqrt{T}} + \frac{B}{2\sqrt{T}} \rho
+    \\
+    \Leftrightarrow
+    f\left( \vec{w} \right) - f\left( \vec{w^{*}} \right) &\leqslant
+    \frac{B \rho}{\sqrt{T}}
+\end{align*}
+
+So for $\eta = \sqrt{\frac{B^2}{\rho^2 T}}$ the convergence rate of gradient decent is in the order of $O\left( \frac{1}{\sqrt{T}} \right)$

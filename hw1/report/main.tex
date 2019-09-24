@@ -1,18 +1,97 @@
-\documentclass{article}
-\usepackage{amsmath}
-\usepackage{graphicx}
+\documentclass[11pt,english]{article}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% paper size & margins
+\usepackage{fullpage}
+\usepackage[showframe=false,margin=1in]{geometry}
+\parindent=0pt
+
+% font management
+\usepackage{relsize}
+\usepackage[T1]{fontenc} % for properly hyphenating words with accented chars
+\usepackage[latin1]{inputenc}
+\usepackage{babel}
+
+% math
+\usepackage{amsmath}
+\usepackage{amsthm, amssymb}
+\usepackage{textcomp}
+\usepackage{stmaryrd}
+\usepackage{upgreek}
+\usepackage{bm}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+
+% assorted
+\usepackage{url}
+\usepackage{breakurl}
+\usepackage{xspace}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\hide}[1]{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title / Author
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-    \input{../2_automatocDifferentiation/q2.5.a.tex}
+\title{CS7643: Deep Learning \\
+Fall 2019\\ HW1 Solutions}
+\author{Nicolas \textsc{Six}}
+\maketitle
 
-%    \input{../2_automatocDifferentiation/q2.5.b}
-%
-%    \input{../2_automatocDifferentiation/q2.5.c}
-%
-%    \input{../2_automatocDifferentiation/q2.5.d}
-%
-%    \input{../2_automatocDifferentiation/q2.5.e}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \input{../1_GradientDescent/q1.1}
+
+\pagebreak
+
+    \input{../1_GradientDescent/q1.3}
+
+\pagebreak
+
+    \input{../1_GradientDescent/q1.4}
+
+\pagebreak
+
+    \input{../2_automatocDifferentiation/q2.5.a}
+
+\pagebreak
+
+    \input{../2_automatocDifferentiation/q2.5.b}
+
+\pagebreak
+
+    \input{../2_automatocDifferentiation/q2.5.c}
+
+\pagebreak
+
+    \input{../2_automatocDifferentiation/q2.5.d}
+
+\pagebreak
+
+    \input{../2_automatocDifferentiation/q2.5.e}
+
+\pagebreak
+
+    \input{../3_DAG/q3.6}
+
+\pagebreak
+
+    \input{../3_DAG/q3.7}
 
 
 \end{document}
