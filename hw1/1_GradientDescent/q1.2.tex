@@ -1,0 +1,29 @@
+We have:
+
+\begin{align*}
+    \vec{w^{(t+1)}} &= \vec{w^{(t)}} - \eta \vec{v_t} \\
+    \Leftrightarrow
+    \vec{v_t} &= \frac{1}{\eta} \left( \vec{w^{(t)}} - \vec{w^{(t+1)}} \right)
+\end{align*}
+
+So:
+
+\begin{align*}
+    \sum^T_{t=1} \left< \vec{w^{(t)}} - \vec{w^{*}}, \vec{v_t} \right>
+    &= \sum^T_{t=1} \left< \vec{w^{(t)}} - \vec{w^{*}}, \frac{1}{\eta} \left( \vec{w^{(t)}} - \vec{w^{(t+1)}} \right) \right> \\
+    &= \frac{1}{\eta} \sum^T_{t=1} \left< \vec{w^{(t)}} - \vec{w^{*}},  \vec{w^{(t)}} - \vec{w^{(t+1)}} \right> \\
+    &= \frac{1}{2\eta} \sum^T_{t=1} \left( \left\| \vec{w^{(t)}} - \vec{w^{*}} \right\|^2 + \left\| \vec{w^{(t)}} - \vec{w^{(t+1)}} \right\|^2 - \left\| \vec{w^{(t)}} - \vec{w^{*}} - \left( \vec{w^{(t)}} - \vec{w^{(t+1)}} \right) \right\|^2  \right) \\
+    &= \frac{1}{2\eta} \sum^T_{t=1} \left( \left\| \vec{w^{(t)}} - \vec{w^{*}} \right\|^2 + \left\| \vec{w^{(t)}} - \vec{w^{(t+1)}} \right\|^2 - \left\| \vec{w^{(t+1)}} - \vec{w^{*}} \right\|^2  \right) \\
+    &= \frac{1}{2\eta} \left( \sum^T_{t=1} \left(\left\| \vec{w^{(t)}} - \vec{w^{(t+1)}} \right\|^2 \right) +  \left\| \vec{w^{(1)}} - \vec{w^{*}} \right\|^2 - \left\| \vec{w^{(T+1)}} - \vec{w^{*}} \right\|^2 \right)  \\
+    &= \frac{1}{2\eta} \left( \sum^T_{t=1} \left(\left\| \vec{w^{(t)}} - \vec{w^{(t+1)}} \right\|^2 \right) +  \left\| \vec{w^{*}} \right\|^2 - \left\| \vec{w^{(T+1)}} - \vec{w^{*}} \right\|^2 \right)  \\
+    &= \frac{\left\| \vec{w^{*}} \right\|^2}{2\eta} + \frac{1}{2\eta} \sum^T_{t=1} \left\| \eta \vec{v_t} \right\|^2 - \frac{1}{2\eta} \left\| \vec{w^{(T+1)}} - \vec{w^{*}} \right\|^2 \\
+    &= \frac{\left\| \vec{w^{*}} \right\|^2}{2\eta} + \frac{\eta}{2} \sum^T_{t=1} \left\| \vec{v_t} \right\|^2 - \frac{1}{2\eta} \left\| \vec{w^{(T+1)}} - \vec{w^{*}} \right\|^2 \\
+\end{align*}
+
+In conclusion
+
+\[
+    \sum^T_{t=1} \left< \vec{w^{(t)}} - \vec{w^{*}}, \vec{v_t} \right>
+    \leqslant \frac{\left\| \vec{w^{*}} \right\|^2}{2\eta} + \frac{\eta}{2} \sum^T_{t=1} \left\| \vec{v_t} \right\|^2
+\]
+

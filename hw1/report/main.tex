@@ -24,7 +24,6 @@
 \usepackage{bm}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 
-
 % assorted
 \usepackage{url}
 \usepackage{breakurl}
@@ -34,6 +33,8 @@
 \usepackage{afterpage}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{subcaption}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Shortcuts
@@ -55,43 +56,93 @@ Fall 2019\\ HW1 Solutions}
 % Body
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+    \section{Gradient Descent}
+    \subsection{Minimisation of $\vec{w^*}$}
     \input{../1_GradientDescent/q1.1}
 
 \pagebreak
 
+    \subsection{Lema proof}
+    \input{../1_GradientDescent/q1.2}
+
+\pagebreak
+
+    \subsection{Convergence rate}
     \input{../1_GradientDescent/q1.3}
 
 \pagebreak
 
+    \subsection{Convergence guarantee}
     \input{../1_GradientDescent/q1.4}
 
 \pagebreak
 
+    \section{Automatic Differentiation}
+    \subsection{Computation graph}
     \input{../2_automatocDifferentiation/q2.5.a}
 
 \pagebreak
 
+    \subsection{Jacobian and numerical differentiation}
     \input{../2_automatocDifferentiation/q2.5.b}
 
 \pagebreak
 
+    \subsection{Forward mode auto-differentiation}
     \input{../2_automatocDifferentiation/q2.5.c}
 
 \pagebreak
 
+    \subsection{Backward mode auto-differentiation}
     \input{../2_automatocDifferentiation/q2.5.d}
 
 \pagebreak
 
+    \subsection{Automation}
     \input{../2_automatocDifferentiation/q2.5.e}
 
 \pagebreak
 
+    \section{Directed Acyclic Graphs (DAG)}
+    \subsection{DAG imply topological ordering}
     \input{../3_DAG/q3.6}
 
 \pagebreak
 
+    \subsection{topological ordering imply DAG}
     \input{../3_DAG/q3.7}
+
+\pagebreak
+
+    \section{Implement and train a network on CIFAR-10}
+    \subsection{cs231n}
+
+    \includepdf[pages=-]{../code/assignment/1_cs231n/softmax.pdf}
+
+    \includepdf[pages=-]{../code/assignment/1_cs231n/two_layer_net.pdf}
+
+    \includepdf[pages=-]{../code/assignment/1_cs231n/layers.pdf}
+
+    \includepdf[pages={1,2,3,4,5,6}]{../code/assignment/1_cs231n/convnet.pdf}
+
+    \subsection{PyTorch}
+    \subsubsection{Softmax}
+    \input{../4_implemantation/pt_softmax.tex}
+
+\pagebreak
+
+    \subsubsection{Two layers NN}
+    \input{../4_implemantation/pt_twolayers.tex}
+
+\pagebreak
+
+    \subsubsection{Convnet}
+    \input{../4_implemantation/pt_convnet.tex}
+
+\pagebreak
+
+    \subsubsection{Experimentation}
+    \input{../4_implemantation/pt_exp.tex}
 
 
 \end{document}

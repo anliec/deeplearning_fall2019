@@ -76,7 +76,7 @@ def two_layer_net(X, model, y=None, reg=0.0):
     N, D = X.shape
 
     # compute the forward pass
-    scores = None
+    # scores = None
     #############################################################################
     # TODO: Perform the forward pass, computing the class scores for the input. #
     # Store the result in the scores variable, which should be an array of      #
@@ -93,7 +93,7 @@ def two_layer_net(X, model, y=None, reg=0.0):
         return scores
 
     # compute the loss
-    loss = None
+    # loss = None
     #############################################################################
     # TODO: Finish the forward pass, and compute the loss. This should include  #
     # both the data loss and L2 regularization for W1 and W2. Store the result  #

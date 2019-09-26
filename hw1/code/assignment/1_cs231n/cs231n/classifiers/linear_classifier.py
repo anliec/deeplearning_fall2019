@@ -47,11 +47,8 @@ class LinearClassifier:
             # replacement is faster than sampling without replacement.              #
             #########################################################################
             indexes = np.random.choice(dim, size=batch_size, replace=True)
-            # indexes = np.arange(batch_size)
             X_batch = X[:, indexes]
             y_batch = y[indexes]
-            # print(it, ": X_batch", np.isnan(X_batch).sum(), "W", np.isnan(self.W).sum())
-            # print(it, ": W", self.W.min(), self.W.max(), self.W.mean())
             #########################################################################
             #                       END OF YOUR CODE                                #
             #########################################################################
@@ -66,8 +63,6 @@ class LinearClassifier:
             # Update the weights using the gradient and the learning rate.          #
             #########################################################################
             self.W -= grad * learning_rate
-            # print(it, ": W", np.isnan(self.W).sum(), "grad", np.isnan(grad).sum())
-            # print("loss", loss)
             #########################################################################
             #                       END OF YOUR CODE                                #
             #########################################################################
