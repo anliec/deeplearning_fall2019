@@ -1,0 +1,82 @@
+
+
+\subsubsection{Convolution}
+
+We are here dealing with 3 dimensional matrix, as such data are hard to represent on paper we are going to divise
+the operation for each filters. So for a final $Y$ of dimension $(4, 2, 2)$ we would have $Y_0$, $Y_1$, $Y_2$, $Y_3$
+each of dimension $(2,2)$.
+
+With that in mind we can write $Y$ as:
+
+\begin{align*}
+    Y_0 &=  w_{(0,0)} X \\
+    Y_1 &=  w_{(0,1)} X \\
+    Y_2 &=  w_{(1,0)} X \\
+    Y_3 &=  w_{(1,1)} X
+\end{align*}
+
+which give a final row major flatenned verion of $Y$ equal to the following:
+
+\[
+    Y =
+    \begin{bmatrixT}
+        w_{(0,0)} x_{(0,0)} & w_{(0,0)} x_{(0,1)} & w_{(0,0)} x_{(1,0)} & w_{(0,0)} x_{(1,1)} &
+        w_{(0,1)} x_{(0,0)} & w_{(0,1)} x_{(0,1)} & w_{(0,1)} x_{(1,0)} & w_{(0,1)} x_{(1,1)} &
+        w_{(1,0)} x_{(0,0)} & w_{(1,0)} x_{(0,1)} & w_{(1,0)} x_{(1,0)} & w_{(1,0)} x_{(1,1)} &
+        w_{(1,1)} x_{(0,0)} & w_{(1,1)} x_{(0,1)} & w_{(1,1)} x_{(1,0)} & w_{(1,1)} x_{(1,1)}
+    \end{bmatrixT}
+\]
+
+
+\subsubsection{Transpose convolution}
+
+Here the computation is very similar to the one given in Subsection\ref{1.3}.
+So we have:
+
+\begin{align*}
+    A =
+    \begin{bmatrix}
+        w_{(0,0)} & 0 & 0 & 0 \\
+        w_{(0,1)} & 0 & 0 & 0 \\
+        0 & w_{(0,0)} & 0 & 0 \\
+        0 & w_{(0,1)} & 0 & 0 \\
+        w_{(1,0)} & 0 & 0 & 0 \\
+        w_{(1,1)} & 0 & 0 & 0 \\
+        0 & w_{(1,0)} & 0 & 0 \\
+        0 & w_{(1,1)} & 0 & 0 \\
+        0 & 0 & w_{(0,0)} & 0 \\
+        0 & 0 & w_{(0,1)} & 0 \\
+        0 & 0 & 0 & w_{(0,0)} \\
+        0 & 0 & 0 & w_{(0,1)} \\
+        0 & 0 & w_{(1,0)} & 0 \\
+        0 & 0 & w_{(1,1)} & 0 \\
+        0 & 0 & 0 & w_{(1,0)} \\
+        0 & 0 & 0 & w_{(1,1)} \\
+    \end{bmatrix}
+\end{align*}
+
+\begin{align*}
+    Y =
+    \begin{bmatrix}
+        x_{(0,0)} w_{(0,0)} \\
+        x_{(0,0)} w_{(0,1)} \\
+        x_{(0,1)} w_{(0,0)} \\
+        x_{(0,1)} w_{(0,1)} \\
+        x_{(0,0)} w_{(1,0)} \\
+        x_{(0,0)} w_{(1,1)} \\
+        x_{(0,1)} w_{(1,0)} \\
+        x_{(0,1)} w_{(1,1)} \\
+        x_{(1,0)} w_{(0,0)} \\
+        x_{(1,0)} w_{(0,1)} \\
+        x_{(1,1)} w_{(0,0)} \\
+        x_{(1,1)} w_{(0,1)} \\
+        x_{(1,0)} w_{(1,0)} \\
+        x_{(1,0)} w_{(1,1)} \\
+        x_{(1,1)} w_{(1,0)} \\
+        x_{(1,1)} w_{(1,1)} \\
+    \end{bmatrix}
+\end{align*}
+
+So in both case we have a matrix of all the different product possible between the weights and the input, but in a
+different ordering.
+Following the definition given in this question, the two operations are then identical.

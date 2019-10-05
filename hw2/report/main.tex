@@ -1,0 +1,161 @@
+\documentclass[11pt,english]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% paper size & margins
+\usepackage{fullpage}
+\usepackage[showframe=false,margin=1in]{geometry}
+\parindent=0pt
+
+% font management
+\usepackage{relsize}
+\usepackage[T1]{fontenc} % for properly hyphenating words with accented chars
+\usepackage[latin1]{inputenc}
+\usepackage{babel}
+
+% math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{stmaryrd}
+\usepackage{upgreek}
+\usepackage{bm}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+% assorted
+\usepackage{url}
+\usepackage{breakurl}
+\usepackage{xspace}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\hide}[1]{}
+
+\usepackage{environ}
+\usepackage{xparse}
+
+\ExplSyntaxOn
+\NewEnviron{bmatrixT}
+ {
+  \marine_transpose:V \BODY
+ }
+
+\int_new:N \l_marine_transpose_row_int
+\int_new:N \l_marine_transpose_col_int
+\seq_new:N \l_marine_transpose_rows_seq
+\seq_new:N \l_marine_transpose_arow_seq
+\prop_new:N \l_marine_transpose_matrix_prop
+\tl_new:N \l_marine_transpose_last_tl
+\tl_new:N \l_marine_transpose_body_tl
+
+\cs_new_protected:Nn \marine_transpose:n
+ {
+  \seq_set_split:Nnn \l_marine_transpose_rows_seq { \\ } { #1 }
+  \int_zero:N \l_marine_transpose_row_int
+  \prop_clear:N \l_marine_transpose_matrix_prop
+  \seq_map_inline:Nn \l_marine_transpose_rows_seq
+   {
+    \int_incr:N \l_marine_transpose_row_int
+    \int_zero:N \l_marine_transpose_col_int
+    \seq_set_split:Nnn \l_marine_transpose_arow_seq { & } { ##1 }
+    \seq_map_inline:Nn \l_marine_transpose_arow_seq
+     {
+      \int_incr:N \l_marine_transpose_col_int
+      \prop_put:Nxn \l_marine_transpose_matrix_prop
+       {
+        \int_to_arabic:n { \l_marine_transpose_row_int }
+        ,
+        \int_to_arabic:n { \l_marine_transpose_col_int }
+       }
+       { ####1 }
+     }
+   }
+   \tl_clear:N \l_marine_transpose_body_tl
+   \int_step_inline:nnnn { 1 } { 1 } { \l_marine_transpose_col_int }
+    {
+     \int_step_inline:nnnn { 1 } { 1 } { \l_marine_transpose_row_int }
+      {
+       \tl_put_right:Nx \l_marine_transpose_body_tl
+        {
+         \prop_item:Nn \l_marine_transpose_matrix_prop { ####1,##1 }
+         \int_compare:nF { ####1 = \l_marine_transpose_row_int } { & }
+        }
+      }
+     \tl_put_right:Nn \l_marine_transpose_body_tl { \\ }
+    }
+   \begin{bmatrix}
+   \l_marine_transpose_body_tl
+   \end{bmatrix}
+ }
+\cs_generate_variant:Nn \marine_transpose:n { V }
+\cs_generate_variant:Nn \prop_put:Nnn { Nx }
+\ExplSyntaxOff
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title / Author
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{CS7643: Deep Learning \\
+Fall 2019\\ HW1 Solutions}
+\author{Nicolas \textsc{Six}}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Convolution Basics}
+
+\subsection{Convolution} \label{1.1}
+\input{../1_convolutions/q1.1.tex}
+
+\subsection{Transpose convolution} \label{1.2}
+\input{../1_convolutions/q1.2.tex}
+
+\subsection{Computation link} \label{1.3}
+\input{../1_convolutions/q1.3.tex}
+
+\section{Logic and XOR}
+
+    \subsection{AND and OR} \label{2.1}
+    \input{../2_logic_XOR/q2.1.tex}
+
+    \subsection{XOR} \label{2.2}
+    \input{../2_logic_XOR/q2.2.tex}
+
+\section{Piecewise linearity}
+
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{../3_piecewise_linearity/curve.png}
+        \caption{Evolution of the output for different value of the input}
+    \end{center}
+\end{figure}
+
+    \subsection{$x=1$}
+    \input{../3_piecewise_linearity/q3.1.tex}
+ \subsection{$x=-11$}
+\input{../3_piecewise_linearity/q3.2.tex}
+ \subsection{$x=-0.5$}
+\input{../3_piecewise_linearity/q3.3.tex}
+
+ \section{Depth - Composing Linear Pieces}
+
+\input{../4_depth/q4.1.tex}
+
+ \input{../4_depth/q4.2.tex}
+
+\end{document}
