@@ -1,5 +1,32 @@
+\paragraph{}
+If we only consider the path that seams to be wanted by the question, $x$ in $[0,1]^d$, $g(x)$ in $[0,1]^d$ and
+$f \circ g (x)$ in $[0,1]^d$.
+Then it easily appear that each identified regions by $g$ would be split into $n_f$ regions.
+Leading to the fact that $f \circ g (x)$ identify onto $[0,1]^d$ $n_g \cdot n_f$ regions.
+Which look like the expected answer.
 
-This question can only be answered by a lower bound of the value.
-As there may have other path that generate region to $[0,1]^d$.
-As the question doesn't mention that those region should be from $[0,1]^d$ and/or pass by $[0,1]^d$ between $f$ and $g$.
+It's important to note that this implication is only guarantee if each of the $n_g$ regions of $g$ identify to
+$[0,1]^d$ and no one of its subset like $[0,0.1]^d$.
+Such behaviour would lead to some input regions of $f$ not being hit, and so, some output regions may be missed, leading
+us to the fact that under this current set of constraint on $f$ and $g$ and the current definition of identification,
+the $n_g \cdot n_f$ number of regions is an upper bound of the final results.
+
+\paragraph{}
+In addition, counting the number of regions on which $f \circ g (\cdot)$ identify onto $[0,1]^d$, doesn't imply any
+assumptions on the intermediate results of function $g$.
+For example function $g$ may identify $n_{g2}$ regions of $[0,1]^d$ onto $[1,2]^d$ and $f$ $n_{f2}$ regions of $[1,2]^d$
+onto $[0,1]^d$.
+This would increase the final results by $n_{g2} \cdot n_{f2}$.
+
+We could apply such a reasoning on every none overlapping intervals where $f$ inputs and $g$ outputs are defined.
+However such definition of $f$ and $g$ are not given here, so we can't assume that such path doesn't exists.
+This show that the final result may be higher than the previously given $n_g \cdot n_f$.
+
+\paragraph{}
+In conclusion as stated previously, the answer to this question is the product of the regions of each sub function,
+in this case $n_g \cdot n_f$.
+But this imply a set large number of assumption that are not defined, and so may not hold true.
+Depending on the assumptions you take this number can be a lower bound or a upper bound, showing that we can't get a
+precise number for the general case.
+
 

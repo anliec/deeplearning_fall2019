@@ -1,0 +1,48 @@
+\paragraph{}
+Each layers having an absolute value activation function, they have one discontinuity leading to only two possible 
+identifications per dimensions of the output.
+So the final output of a given layer identify onto $2^d$ regions of it's input (d split in two of the original input 
+region).
+
+As shown in the previous question, staking layers (i.e.\ combining functions) lead to the multiplication of the regions.
+Here all layers behave in the same way and identify onto $2^d$ regions.
+Staking all of this layers together give us the expected $2^{Ld}$ regions results.
+
+\paragraph{}
+However, we are here also forgetting about a large set of assumptions.
+Due to the limited input space, and the large set of value possible for the weights and bias this result may not hold 
+true.
+
+On way to see that is to pick the weights such as:
+\[
+    W_1 = W_2 = W_3 = \cdots = W_L = I
+\]
+
+And the bias such as:
+
+\[
+    b_1 = b_2 = b_3 = \cdots = b_L = \vec{0}
+\]
+
+Using this we quickly see that:
+
+\[
+    f(x) = | x |
+\]
+
+and as every every value of $x$ are bigger than $0$ ($x \in [0,1]^d$):
+
+\[
+    f(x) = x
+\]
+
+Which in this special case clearly give us that $f(x)$ identify to $1$ region of it's input.
+However in this special case we didn't break any assumption given in the subject, showing that $f(x)$ may not identifies
+to $2^{Ld}$ regions of it's input.
+
+\paragraph{}
+In conclusion, The general results of this question as showed above is clearly $2^{Ld}$.
+But, as demonstrated in the example above, this results is get by a large set of underlying assumption that are never
+given and may not hold true in real cases (even if it will on most of the case).
+
+
