@@ -1,7 +1,8 @@
 
+If we include padding in $X$:
 
 \[
-    A =
+    A^T =
     \begin{bmatrixT}
         w_{(0,0)} & w_{(0,1)} & 0 & 0 & 0 & w_{(1,0)} & w_{(1,1)} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         0 & 0 & 0 & w_{(0,0)} & w_{(0,1)} & 0 & 0 & 0 & w_{(1,0)} & w_{(1,1)} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -10,4 +11,20 @@
     \end{bmatrixT}
 \]
 
+If we don't as mentioned on Piazza, but not clearly on the subject:
 
+\[
+    A =
+    \begin{bmatrix}
+        w_{(1,1)} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & w_{(1,0)} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 0 & 0 & w_{(0,1)} & 0 & 0 \\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & w_{(1,1)}
+    \end{bmatrix}
+\]
+
+
+In both cases, with a results with or without padding:
+\[
+    A \cdot X = Y
+\]
