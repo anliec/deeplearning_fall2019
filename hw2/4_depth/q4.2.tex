@@ -1,21 +1,21 @@
 \paragraph{}
-If we only consider the path that seams to be wanted by the question, $x$ in $[0,1]^d$, $g(x)$ in $[0,1]^d$ and
-$f \circ g (x)$ in $[0,1]^d$.
+If we only consider the path that seams to be wanted by the question, $x$ in $]0,1[^d$, $g(x)$ in $]0,1[^d$ and
+$f \circ g (x)$ in $]0,1[^d$.
 Then it easily appear that each identified regions by $g$ would be split into $n_f$ regions.
-Leading to the fact that $f \circ g (x)$ identify onto $[0,1]^d$ $n_g \cdot n_f$ regions.
+Leading to the fact that $f \circ g (x)$ identify onto $]0,1[^d$ $n_g \cdot n_f$ regions.
 Which look like the expected answer.
 
 It's important to note that this implication is only guarantee if each of the $n_g$ regions of $g$ identify to
-$[0,1]^d$ and no one of its subset like $[0,0.1]^d$.
+$]0,1[^d$ and no one of its subset like $]0,0.1[^d$.
 Such behaviour would lead to some input regions of $f$ not being hit, and so, some output regions may be missed, leading
 us to the fact that under this current set of constraint on $f$ and $g$ and the current definition of identification,
 the $n_g \cdot n_f$ number of regions is an upper bound of the final results.
 
 \paragraph{}
-In addition, counting the number of regions on which $f \circ g (\cdot)$ identify onto $[0,1]^d$, doesn't imply any
+In addition, counting the number of regions on which $f \circ g (\cdot)$ identify onto $]0,1[^d$, doesn't imply any
 assumptions on the intermediate results of function $g$.
-For example function $g$ may identify $n_{g2}$ regions of $[0,1]^d$ onto $[1,2]^d$ and $f$ $n_{f2}$ regions of $[1,2]^d$
-onto $[0,1]^d$.
+For example function $g$ may identify $n_{g2}$ regions of $]0,1[^d$ onto $]1,2[^d$ and $f$ $n_{f2}$ regions of $]1,2[^d$
+onto $]0,1[^d$.
 This would increase the final results by $n_{g2} \cdot n_{f2}$.
 
 We could apply such a reasoning on every none overlapping intervals where $f$ inputs and $g$ outputs are defined.
