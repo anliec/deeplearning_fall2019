@@ -1,0 +1,36 @@
+
+\paragraph{}
+For this question we will suppose that $W$ is a diagonalizable matrix, which is implied by the fact that it's
+eigenvalues are given in the subject.
+
+With that in mind, we know that it exist a matrix $Q$ such as:
+
+\[
+    W = Q D Q^{-1}
+\]
+
+\paragraph{}
+With $D$ being a diagonal matrix with tha eigenvalues of $W$ on the diagonal (and $Q$ the eigenvectors).
+
+\paragraph{}
+Using this we can easily rewrite the given equation as:
+\begin{align*}
+    h_t &= W^T h_{t-1}
+        &= (Q D Q^{-1})^T h_{t-1}
+        &= Q D Q^{-1} h_{t-1}
+    h_t &= Q D^t Q^{-1} h_{0}
+\end{align*}
+
+\paragraph{}
+It is trivial that raising a diagonal matrix to a power $t$ is equivalent to raise each of it's diagonal element to the
+power $t$.
+So depending on the value of the eigenvalues, raising the matrix $D$ to a high power will make the diagonal element
+tend to zero (vanish) if they are smaller than one (in absolute value).
+If they are bigger than one (in absolute value) they will diverge to infinity.
+Or change signs / stay the same of they are $1$ or $-1$.
+
+\paragraph{}
+This matrix is then used to compute the output, $h_t$, but also in the backward pass to propagate the gradient.
+Especially for the first inputs.
+So the gradient could be multiplied by values that are either too big (exploding) or too small (vanishing).
+

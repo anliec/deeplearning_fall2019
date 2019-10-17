@@ -1,0 +1,70 @@
+
+\paragraph{}
+As said in Question \ref{q1.1}, we want to build a network such as:
+
+\[
+    h_t = XOR \left( h_{t-1}, x_t \right)
+\]
+
+\paragraph{}
+In this question we have a lot of variable and a lot of different combination are so possible to get the correct results.
+We are here going to make it as simple as possible, to help the correction and the redaction of this report.
+
+\paragraph{}
+First we are going to set that $C_t = h_t$, this is easy to make by using the following weights:
+
+\begin{align*}
+    W_o &=
+    \begin{bmatrix}
+        0 \\
+        0
+    \end{bmatrix}\\
+    b_o &= 1
+\end{align*}
+
+\paragraph{}
+Which give us $o_t = 1$, which translate in:
+
+\begin{align*}
+    h_t &= o_t \cdot tanh(C_t) \\
+    &= tanh(C_t) \\
+    &= C_t \text{ for } C_t \in {0,1}
+\end{align*}
+
+\paragraph{}
+On the same idea we define $C^{\sim}_t = 1 - h_t$ with:
+
+\begin{align*}
+    W_C &=
+    \begin{bmatrix}
+        -1 \\
+        0
+    \end{bmatrix}\\
+    b_C &= 1
+\end{align*}
+
+\paragraph{}
+Now we want $f_t$ to be $1$ if $x_t$ is zero and $0$ otherwise:
+
+\begin{align*}
+    W_t &=
+    \begin{bmatrix}
+        0 \\
+        -1
+    \end{bmatrix}\\
+    b_t &= 1
+\end{align*}
+
+\paragraph{}
+Now we want $i_t$ to be $1$ if $x_t$ is one and $0$ otherwise:
+
+\begin{align*}
+    W_t &=
+    \begin{bmatrix}
+        0 \\
+        1
+    \end{bmatrix}\\
+    b_t &= 0
+\end{align*}
+
+As previously, we assume here that $C_t$ and $h_t$ are initialised to zero.

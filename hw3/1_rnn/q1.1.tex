@@ -1,0 +1,87 @@
+
+\paragraph{}
+Following the homework instructions, we are looking $W$ and $b$ such as:
+
+\[
+    [y_t] = act\left( W \cdot
+    \begin{bmatrix}
+        y_{t-1} \\
+        x_t
+    \end{bmatrix}
+    + b
+    \right)
+\]
+
+\paragraph{}
+Following the instruction in the instructions, we can build the following truth table:
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ll|ll}
+            & \multicolumn{1}{c}{}  & \multicolumn{2}{c}{$y_{t-1}$} \\
+            &   & 0 & 1 \\ \cline{2-4}
+            \multirow{2}{*}{$x_t$}
+            & 0 & 0 & 1 \\
+            & 1 & 1 & 0 \\
+        \end{tabular}
+        \caption{Truth table of $y_t$}
+    \end{center}
+\end{table}
+
+\paragraph{}
+This table is basically the truth table of an XOR function.
+We saw during the last homework that such a function can't be represented by a single neurone and a linear activation.
+
+\paragraph{}
+Hopefully we are here free to use the activation function we want.
+If a linear activation is unable to represent XOR, an absolute activation function is a good fit.
+
+Using the information from above we can quickly our neurone as:
+
+\[
+    [y_t] = abs\left(
+    \begin{bmatrix}
+        1 & -1 \\
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        y_{t-1} \\
+        x_t
+    \end{bmatrix}
+    + 0
+    \right)
+\]
+\paragraph{}
+We can now apply this set of weight to the four possible incomes, as displayed on Table \ref{neuroneValue}
+
+\begin{table}
+    \begin{center}
+        \begin{tabular}{ll|ll}
+            & \multicolumn{1}{c}{}  & \multicolumn{2}{c}{$y_{t-1}$} \\
+            &   & 0 & 1 \\ \cline{2-4}
+            \multirow{2}{*}{$x_t$}
+            & 0 & 0  & 1 \\
+            & 1 & -1 & 0 \\
+        \end{tabular}
+        \caption{Value table of our neurone for all possible inputs}
+        \label{neuroneValue}
+    \end{center}
+\end{table}
+\paragraph{}
+If we then apply the activation function we chose to the value of Table \ref{neuroneValue}, we easily fall back on the truth table of XOR, as showed on Table \ref{neuroneValueFinal}.
+
+\begin{table}
+    \begin{center}
+        \begin{tabular}{ll|ll}
+            & \multicolumn{1}{c}{}  & \multicolumn{2}{c}{$y_{t-1}$} \\
+            &   & 0 & 1 \\ \cline{2-4}
+            \multirow{2}{*}{$x_t$}
+            & 0 & 0 & 1 \\
+            & 1 & 1 & 0 \\
+        \end{tabular}
+        \caption{Value table output of our neurone for all possible inputs with the preset weights and bias as well as the selected activation function}
+        \label{neuroneValueFinal}
+    \end{center}
+\end{table}
+
+The above results assume that $h$ is initialized with a value of zero.
