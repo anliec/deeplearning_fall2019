@@ -115,7 +115,7 @@ class CaptioningRNN(object):
         # Weight and bias for the hidden-to-vocab transformation.
         W_vocab, b_vocab = self.params['W_vocab'], self.params['b_vocab']
 
-        loss, grads = 0.0, {}
+        # loss, grads = 0.0, {}
         ############################################################################
         # TODO: Implement the forward and backward passes for the CaptioningRNN.   #
         # In the forward pass you will need to do the following:                   #
@@ -137,7 +137,42 @@ class CaptioningRNN(object):
         # defined above to store loss and gradients; grads[k] should give the      #
         # gradients for self.params[k].                                            #
         ############################################################################
-        pass
+        if self.cell_type == 'rnn':
+            forward = rnn_forward
+            backward = rnn_backward
+        elif self.cell_type == 'lstm':
+            forward = lstm_forward
+            backward = lstm_backward
+        else:
+            raise NotImplementedError("Cell type {} is not implemented".format(self.cell_type))
+
+        h0 = features @ W_proj + b_proj
+        x, cache_word = word_embedding_forward(captions_in, W_embed)
+
+        h, cache_nn = forward(x, h0, Wx, Wh, b)
+
+        scores, cache_sc = temporal_affine_forward(h, W_vocab, b_vocab)
+        loss, dscores = temporal_softmax_loss(scores, captions_out, mask, verbose=False)
+
+        dh, dW_vocab, db_vocab = temporal_affine_backward(dscores, cache_sc)
+
+        dx, dh0, dWx, dWh, db = backward(dh, cache_nn)
+
+        dW_embed = word_embedding_backward(dx, cache_word)
+
+        dW_proj = features.T @ dh0
+        db_proj = np.sum(dh0, axis=0)
+
+        grads = {k: v for k, v in self.params.items()}
+        grads['W_proj'] = dW_proj
+        grads['b_proj'] = db_proj
+        grads['W_embed'] = dW_embed
+        grads['Wx'] = dWx
+        grads['Wh'] = dWh
+        grads['b'] = db
+        grads['W_vocab'] = dW_vocab
+        grads['b_vocab'] = db_vocab
+
         ############################################################################
         #                             END OF YOUR CODE                             #
         ############################################################################
@@ -199,7 +234,31 @@ class CaptioningRNN(object):
         # functions; you'll need to call rnn_step_forward or lstm_step_forward in #
         # a loop.                                                                 #
         ###########################################################################
-        pass
+        h0 = features @ W_proj + b_proj
+
+        captions[:, 0] = self._start
+        h = h0
+        prev_c = np.zeros_like(h0)
+
+        # start word
+        capt = self._start * np.ones((N, 1), dtype=np.int32)
+
+        for t in range(max_length):
+            word_embed, _ = word_embedding_forward(capt, W_embed)
+
+            if self.cell_type == 'rnn':
+                h, _ = rnn_step_forward(np.squeeze(word_embed), h, Wx, Wh, b)
+            elif self.cell_type == 'lstm':
+                h, prev_c, _ = lstm_step_forward(np.squeeze(word_embed), h, prev_c, Wx, Wh, b)
+            else:
+                raise ValueError('{} not implemented'.format(self.cell_type))
+
+            scores, _ = temporal_affine_forward(h[:, np.newaxis, :], W_vocab, b_vocab)
+
+            idx_best = np.squeeze(np.argmax(scores, axis=2))
+            captions[:, t] = idx_best
+
+            capt = captions[:, t]
         ############################################################################
         #                             END OF YOUR CODE                             #
         ############################################################################
