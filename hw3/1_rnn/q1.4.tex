@@ -6,7 +6,7 @@ eigenvalues are given in the subject.
 With that in mind, we know that it exist a matrix $Q$ such as:
 
 \[
-    W = Q D Q^{-1}
+    W^T = Q D Q^{-1}
 \]
 
 \paragraph{}
@@ -15,9 +15,8 @@ With $D$ being a diagonal matrix with tha eigenvalues of $W$ on the diagonal (an
 \paragraph{}
 Using this we can easily rewrite the given equation as:
 \begin{align*}
-    h_t &= W^T h_{t-1}
-        &= (Q D Q^{-1})^T h_{t-1}
-        &= Q D Q^{-1} h_{t-1}
+    h_t &= W^T h_{t-1} \\
+        &= Q D Q^{-1} h_{t-1} \\
     h_t &= Q D^t Q^{-1} h_{0}
 \end{align*}
 

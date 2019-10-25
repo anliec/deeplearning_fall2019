@@ -1,0 +1,10 @@
+\paragraph{}
+We know from the definition, that adding a new element in $B_i$ have two different effect.
+First, as the final score is the product of probability, the score of the $b+1$ length sentences can only be smaller or equal than for the one of the highest scoring sentence of length $b$.
+Second, $best_{\leq i}$ can only be smaller or equal to $best_{\leq i + 1}$ for obvious reason.
+It will stay the same if there is no sentence of length $i + 1$ with higher score.
+\paragraph{}
+Which lead us the the conclusion that $best_{\leq i}$ is defined and is the highest scoring item in $B_i$.
+Then all new sentence in $B_{i+1}$ would have a lower score than the highest scoring item in $B_i$, which here is $best_{\leq i}$, because of the first point cited previously.
+Which mean that any sentence longer than $i$ would have lower or equal score than $best_{\leq i}$.
+

@@ -245,7 +245,7 @@ def lstm_step_forward(x, prev_h, prev_c, Wx, Wh, b):
     - next_c: Next cell state, of shape (N, H)
     - cache: Tuple of values needed for backward pass.
     """
-    next_h, next_c, cache = None, None, None
+    # next_h, next_c, cache = None, None, None
     #############################################################################
     # TODO: Implement the forward pass for a single timestep of an LSTM.        #
     # You may want to use the numerically stable sigmoid implementation above.  #
@@ -356,8 +356,10 @@ def lstm_forward(x, h0, Wx, Wh, b):
     cache = [None] * T
 
     h[0], prev_c, cache[0] = lstm_step_forward(x[0], h0, prev_c, Wx, Wh, b)
+
     for t in range(1, T):
         h[t], prev_c, cache[t] = lstm_step_forward(x[t], h[t - 1], prev_c, Wx, Wh, b)
+
     h = h.transpose(1, 0, 2)
     ##############################################################################
     #                               END OF YOUR CODE                             #
