@@ -12,6 +12,8 @@
 !*.pyx
 !*.sh
 !*.csv
+!Makefile
+!requirements.txt
 
 !.gitignore
 

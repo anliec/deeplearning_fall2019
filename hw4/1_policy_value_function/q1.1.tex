@@ -1,0 +1,54 @@
+
+\paragraph{}
+In this context:
+
+\begin{align*}
+    r_t(S_1, \text{"stay"}) &= -1\\
+    r_t(S_2, \text{"stay"}) &= -1
+\end{align*}
+
+In other word, no matter the first state, we can simplyfi the equation in the following way:
+
+\begin{align*}
+    \sum^\infty_{t=0} \gamma^t r_t(s_t, a_t) &= \sum^\infty_{t=0} - \gamma^t\\
+    &= - lim_{t \rightarrow \infty} \left( \frac{\gamma^t - 1}{\gamma - 1} \right) \text{ if } \gamma \neq 1
+\end{align*}
+
+In this question $\gamma$ is described as a discount, which is usually so $\gamma \in [0, 1[$.
+But this range is not precised on the question we will so explore all the different cases.
+
+\subsubsection{$\gamma \in ]-1, 1[$}
+
+\begin{align*}
+    \sum^\infty_{t=0} \gamma^t r_t(s_t, a_t) &= \frac{1}{\gamma - 1}
+\end{align*}
+
+\subsubsection{$\gamma = 1$}
+
+\begin{align*}
+    \sum^\infty_{t=0} \gamma^t r_t(s_t, a_t) &= \sum^\infty_{t=0} - 1^t\\
+    &= - \infty
+\end{align*}
+
+\subsubsection{$\gamma \in ]1, +\infty[ $}
+
+\begin{align*}
+    \sum^\infty_{t=0} \gamma^t r_t(s_t, a_t)
+    &= -lim_{t \rightarrow \infty} \left( \frac{\gamma^t - 1}{\gamma - 1} \right)\\
+    &= - \infty
+\end{align*}
+
+\subsubsection{$\gamma = -1$}
+
+In this case $\sum^\infty_{t=0} \gamma^t r_t(s_t, a_t)$ does not converge and just alternate between $0$ and $1$.
+
+\subsubsection{$\gamma \in ]-\infty, -1[ $}
+
+\begin{align*}
+    \sum^\infty_{t=0} - \gamma^t &= - \sum^\infty_{t=0} \gamma^{2t} + \gamma^{2t+1} \\
+    &= -lim_{t \rightarrow \infty} \left( \frac{{\gamma^2}^t - 1}{\gamma^2 - 1} + \gamma \frac{{\gamma^2}^t - 1}{\gamma^2 - 1} \right) \\
+    &= -lim_{t \rightarrow \infty} \left( (\gamma + 1) \frac{{\gamma^2}^t - 1}{\gamma^2 - 1} \right) \\
+    &= + \infty
+\end{align*}
+
+

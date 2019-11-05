@@ -1,0 +1,23 @@
+
+
+
+\begin{align}
+    \left\| T(x_1) - T(x_2) \right\|_{\infty} &\leq \gamma \left\| x_1 - x_2 \right\|_{\infty} \label{2.4bonus_eq}
+\end{align}
+
+
+From equation \ref{2.4bonus_eq} we know that $T$ is continuous, monotonic and decreasing (as $0 \leq \alpha < 1$).
+
+So the hyper plan designed by $T$ must intersect with the hyper plan designed by the identity function, which is continuous, monotonic and increasing.
+
+In addition, if there is two different fixed point, $x^{*1}$ and $x^{*2}$, then:
+
+\begin{align*}
+    \left\| T(x^{*1}) - T(x^{*2}) \right\|_\infty
+    &= \left\| x^{*1} - x^{*2} \right\|_\infty \\
+    &\geqslant \alpha \left\| x^{*1} - x^{*2} \right\|_\infty \text{ as } \alpha < 1 \text{ and } \left\| x^{*1} - x^{*2} \right\|_\infty \neq 0
+\end{align*}
+
+So we can't have two distinct fixed points for $T$.
+
+In conclusion, there is one unique fixed point where $T(x) = x$.

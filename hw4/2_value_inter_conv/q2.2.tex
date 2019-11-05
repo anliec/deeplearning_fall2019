@@ -1,0 +1,13 @@
+
+\begin{align*}
+    \left\| T(V) - T(V') \right\|_{\infty}
+    &= \left\| max_a \sum_{s'} p(s'|s,a)[r(s,a)+\gamma V] - max_a \sum_{s'} p(s'|s,a)[r(s,a)+\gamma V'] \right\|_{\infty} \\
+    &\leq \left\| max_a \left( \sum_{s'} p(s'|s,a)[r(s,a)+\gamma V] - \sum_{s'} p(s'|s,a)[r(s,a)+\gamma V'] \right) \right\|_{\infty} \\
+    &\leq \left\| max_a \left( \sum_{s'} \left( p(s'|s,a)[r(s,a)+\gamma V] - p(s'|s,a)[r(s,a)+\gamma V'] \right) \right) \right\|_{\infty} \\
+    &\leq \left\| max_a \left( \sum_{s'} \left( p(s'|s,a)[r(s,a)+\gamma V - r(s,a)+\gamma V'] \right) \right) \right\|_{\infty} \\
+    &\leq \left\| max_a \left( \sum_{s'} \left( p(s'|s,a)[\gamma V - \gamma V'] \right) \right) \right\|_{\infty} \\
+    &\leq \gamma \left\| max_a \left( \sum_{s'} \left( p(s'|s,a)[V - V'] \right) \right) \right\|_{\infty} \\
+    &\leq \gamma \left\| max_a \left(V - V' \right) \right\|_{\infty} \text{ as } \sum_{s'} p(s'|s,a) = 1 \\
+    &\leq \gamma \left\| V - V' \right\|_{\infty} \\
+\end{align*}
+

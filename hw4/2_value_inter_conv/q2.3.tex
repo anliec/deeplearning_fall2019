@@ -1,0 +1,20 @@
+Starting with the previous results, we have:
+
+\begin{align*}
+    \left\| T(V^n) - T(V^{n+1}) \right\|_{\infty} &\leq \gamma \left\| V^{n} - V^{n+1} \right\|_{\infty} \\
+    \Leftrightarrow
+    \left\| V^{n+1} - V^{n+2} \right\|_{\infty} &\leq \gamma \left\| V^{n} - V^{n+1} \right\|_{\infty} \\
+    \Leftrightarrow
+    \left\| V^{n+1} - V^* \right\|_{\infty} - \left\| V^{n+2} - V^* \right\|_{\infty} &\leq \gamma \left\| V^{n} - V^{n+1} \right\|_{\infty} \\
+    \Leftrightarrow
+    \left\| V^{n+1} - V^* \right\|_{\infty} - \left\| T(V^{n+1}) - T(V^*) \right\|_{\infty} &\leq \gamma \left\| V^{n} - V^{n+1} \right\|_{\infty} \\
+    \Leftrightarrow
+    \left\| V^{n+1} - V^* \right\|_{\infty} - \gamma \left\| V^{n+1} - V^* \right\|_{\infty} &\leq \gamma \left\| V^{n} - V^{n+1} \right\|_{\infty} \\
+    \Leftrightarrow
+    (1 - \gamma) \left\| V^{n+1} - V^* \right\|_{\infty} &\leq \gamma \left\| V^{n} - V^{n+1} \right\|_{\infty} \\
+    \Leftrightarrow
+    \left\| V^{n+1} - V^* \right\|_{\infty} &\leq \frac{\gamma}{1 - \gamma} \left\| V^{n} - V^{n+1} \right\|_{\infty} \\
+    \Leftrightarrow
+    \left\| V^{n+1} - V^* \right\|_{\infty} &\leq \frac{\gamma}{1 - \gamma} \epsilon \text{ for } n > N
+\end{align*}
+

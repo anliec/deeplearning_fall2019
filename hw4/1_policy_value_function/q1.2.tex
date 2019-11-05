@@ -1,0 +1,12 @@
+The optimal policy is $("go","go")$.
+Lets name this policy $\pi^*$.
+Now we can compute the value of each state following this policy.
+
+\begin{align*}
+    V^*(S_2) &= r(S_2, "go") \\
+    &= 3
+    V^*(S_1) &= r(S_1, "go") + \gamma V^*(S_2) \\
+    &= -2 + 3 \gamma
+\end{align*}
+
+
