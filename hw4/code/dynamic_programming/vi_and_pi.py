@@ -30,6 +30,7 @@ the parameters P, nS, nA, gamma are defined as follows:
         Discount factor. Number in range [0, 1)
 """
 
+
 def policy_evaluation(P, nS, nA, policy, gamma=0.9, tol=1e-3, DEBUG=False):
     """Evaluate the value function from a given policy.
 
@@ -53,7 +54,21 @@ def policy_evaluation(P, nS, nA, policy, gamma=0.9, tol=1e-3, DEBUG=False):
     #####################################################################
     # YOUR IMPLEMENTATION HERE
     #####################################################################
-    pass
+    while True:
+        loop = False
+        for s in range(nS):
+            a = policy[s]
+            new_val = 0.0
+            for prob, next_s, rew, terminal in P[s][a]:
+                if not terminal:
+                    new_val += prob * (rew + gamma * value_function[next_s])
+                else:
+                    new_val += prob * rew
+            if abs(new_val - value_function[s]) > tol:
+                loop = True
+            value_function[s] = new_val
+        if not loop:
+            break
     #####################################################################
     #                             END OF YOUR CODE                      #
     #####################################################################
@@ -85,7 +100,17 @@ def policy_improvement(P, nS, nA, value_from_policy, policy, gamma=0.9):
     #####################################################################
     # YOUR IMPLEMENTATION HERE
     #####################################################################
-    pass
+    new_val = np.zeros(nA, dtype=np.float32)
+    for s in range(nS):
+        state_data = P[s]
+        for a in range(nA):
+            new_val[a] = 0.0
+            for prob, next_s, rew, terminal in state_data[a]:
+                if not terminal:
+                    new_val[a] += prob * (rew + gamma * value_from_policy[next_s])
+                else:
+                    new_val[a] += prob * rew
+        new_policy[s] = new_val.argmax()
     #####################################################################
     #                             END OF YOUR CODE                      #
     #####################################################################
@@ -111,16 +136,24 @@ def policy_iteration(P, nS, nA, gamma=0.9, tol=10e-3):
     """
 
     value_function = np.zeros(nS)
-    policy = np.zeros(nS, dtype=int)
+    # policy = np.zeros(nS, dtype=int)
 
     #####################################################################
     # YOUR IMPLEMENTATION HERE
     #####################################################################
-    pass
+    policy = np.random.random_integers(0, nA-1, nS).astype(np.int)
+    while True:
+        policy_value = policy_evaluation(P, nS, nA, policy, gamma, tol)
+        new_policy = policy_improvement(P, nS, nA, policy_value, policy, gamma)
+        if (new_policy == policy).all():
+            policy = new_policy
+            break
+        policy = new_policy
     #####################################################################
     #                             END OF YOUR CODE                      #
     #####################################################################
     return value_function, policy
+
 
 def value_iteration(P, nS, nA, gamma=0.9, tol=1e-3):
     """
@@ -146,11 +179,30 @@ def value_iteration(P, nS, nA, gamma=0.9, tol=1e-3):
     #####################################################################
     # YOUR IMPLEMENTATION HERE
     #####################################################################
-    pass
+    new_val = np.zeros(nA, dtype=np.float32)
+    while True:
+        loop = False
+        for s in range(nS):
+            state_data = P[s]
+            for a in range(nA):
+                new_val[a] = 0.0
+                for prob, next_s, rew, terminal in state_data[a]:
+                    if not terminal:
+                        new_val[a] += prob * (rew + gamma * value_function[next_s])
+                    else:
+                        new_val[a] += prob * rew
+            best = new_val.max()
+            if abs(best - value_function[s]) > tol:
+                loop = True
+            value_function[s] = best
+            policy[s] = new_val.argmax()
+        if not loop:
+            break
     #####################################################################
     #                             END OF YOUR CODE                      #
     #####################################################################
     return value_function, policy
+
 
 def render_single(env, policy, max_steps=100, show_rendering=True):
     """
@@ -183,6 +235,7 @@ def render_single(env, policy, max_steps=100, show_rendering=True):
         print("The agent didn't reach a terminal state in {} steps.".format(max_steps))
     else:
         print("Episode reward: %f" % episode_reward)
+
 
 def evaluate(env, policy, max_steps=100, max_episodes=32):
     """

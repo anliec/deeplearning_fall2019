@@ -40,6 +40,8 @@
 \usepackage{multirow}
 \usepackage{placeins}
 \usepackage{listings}
+\usepackage{dsfont}
+\usepackage{mathtools}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Shortcuts
@@ -134,6 +136,17 @@
 
 \lstset{style=mystyle}
 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title / Author
@@ -165,7 +178,6 @@
     \pagebreak
     \section{Value Iteration Convergence}
     \subsubsection{Error decrease}
-
     \input{../2_value_inter_conv/q2.1.tex}
 
     \pagebreak
@@ -179,5 +191,19 @@
     \pagebreak
     \subsection{Unique fixed point}
     \input{../2_value_inter_conv/q2.4.tex}
+
+    \pagebreak
+    \section{Learning the Model}
+    \subsubsection{Error bound}
+    \input{../3_Learning_model/q3.1.tex}
+
+    \pagebreak
+    \section{Policy Gradients Variance Reduction}
+    \subsubsection{Gradient offset}
+    \input{../4_policy_grad/q4.1.tex}
+
+    \pagebreak
+    \subsubsection{Variance}
+    \input{../4_policy_grad/q4.2.tex}
 
 \end{document}

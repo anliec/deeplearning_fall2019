@@ -20,7 +20,9 @@ class LinearQNet(nn.Module):
         #     number of actions: env.action_space.n
         #     number of stacked observations in state: config.state_history
         #####################################################################
-        pass
+        H, W, C = env.observation_space.shape
+        action_count = env.action_space.n
+        self.linear = nn.Linear(in_features=H * W * C * config.state_history, out_features=action_count)
         #####################################################################
         #                             END OF YOUR CODE                      #
         #####################################################################
@@ -38,7 +40,19 @@ class LinearQNet(nn.Module):
         #####################################################################
         # TODO: Implement the forward pass, 1-2 lines.
         #####################################################################
-        pass
+        print(state.shape)
+        if len(state.shape) == 4:
+            batch, _, _, _ = state.shape
+        elif len(state.shape) == 3:
+            batch = 1
+        else:
+            raise NotImplementedError
+        if type(state) == np.ndarray:
+            state = torch.from_numpy(state).cuda()
+        print(type(state))
+        state = state.reshape((batch, -1))
+        print(state.shape)
+        return self.linear(state)
         #####################################################################
         #                             END OF YOUR CODE                      #
         #####################################################################

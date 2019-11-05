@@ -13,13 +13,14 @@ class DQNTrain(QNTrain):
     """
     Class for training a DQN
     """
+
     def __init__(
-        self,
-        q_net_class,
-        env,
-        config,
-        device,
-        logger=None,
+            self,
+            q_net_class,
+            env,
+            config,
+            device,
+            logger=None,
     ):
         super().__init__(env, config, logger)
         self.device = device
@@ -44,7 +45,6 @@ class DQNTrain(QNTrain):
         else:
             raise ValueError(f"Unknown optim_type: {config.optim_type}")
 
-
     def process_state(self, state):
         """
         Processing of state
@@ -62,20 +62,28 @@ class DQNTrain(QNTrain):
         #####################################################################
         # TODO: Process state to match the return output specified above.
         #####################################################################
-        pass
+        if len(state.shape) == 4:
+            batch, _, _, _ = state.shape
+            state = state.reshape((state.shape[0], -1))
+        elif len(state.shape) == 3:
+            state = state.reshape((1, -1))
+        elif len(state.shape) == 2 and state.shape[0] == 1:
+            pass
+        else:
+            raise NotImplementedError("invalid input shape: {}".format(state.shape))
+        state = torch.from_numpy(state).to(device=self.device)
         #####################################################################
         #                             END OF YOUR CODE                      #
         #####################################################################
         return state
 
-
     def forward_loss(
-        self,
-        state,
-        action,
-        reward,
-        next_state,
-        done_mask,
+            self,
+            state,
+            action,
+            reward,
+            next_state,
+            done_mask,
     ):
         """
         Compute loss for a batch of transitions. Transitions are defiend as
@@ -122,7 +130,6 @@ class DQNTrain(QNTrain):
         #####################################################################
         return loss
 
-
     def update_target_params(self):
         """
         Update parametes of Q' with parameters of Q
@@ -139,7 +146,6 @@ class DQNTrain(QNTrain):
         #                             END OF YOUR CODE                      #
         #####################################################################
 
-
     def module_grad_norm(self, net):
         """
         Compute the L2 norm of gradients accumulated in net
@@ -152,7 +158,6 @@ class DQNTrain(QNTrain):
             total_norm = np.sqrt(total_norm)
             return total_norm
 
-
     def save(self):
         """
         Saves session
@@ -161,9 +166,8 @@ class DQNTrain(QNTrain):
             os.makedirs(self.config.model_output)
 
         torch.save(self.q_net.state_dict(),
-            os.path.join(self.config.model_output,
-                f"{self.q_net.__class__.__name__}.vd"))
-
+                   os.path.join(self.config.model_output,
+                                f"{self.q_net.__class__.__name__}.vd"))
 
     def get_best_action(self, state):
         """
@@ -179,7 +183,6 @@ class DQNTrain(QNTrain):
         action_values = self.q_net(state)
 
         return np.argmax(action_values.cpu().numpy()), action_values
-
 
     def update_step(self, t, replay_buffer, lr):
         """
@@ -200,7 +203,7 @@ class DQNTrain(QNTrain):
             = replay_buffer.sample(self.config.batch_size)
 
         #####################################################################
-        # TODOs:
+        # TODO:
         # 1. Process all the arrays sampled from the replay buffer
         #   states -> use self.process_state
         #   everything else -> convert np.ndarrays to torch tensors

@@ -1,0 +1,9 @@
+
+\begin{align*}
+    Var(\nabla_\theta J(\theta))
+    &= Var([\mathcal{R}(\tau) + b] \nabla_\theta log \pi_\theta(\tau)) \\
+    &= \mathds{E} \left( \left( [\mathcal{R}(\tau) + b] \nabla_\theta log \pi_\theta(\tau) \right) ^2 \right) - \mathds{E} \left( [\mathcal{R}(\tau) + b] \nabla_\theta log \pi_\theta(\tau) \right)^2 \\
+    &= \mathds{E} \left( \left( [\mathcal{R}(\tau)^2 + 2\mathcal{R}(\tau)b + b^2] (\nabla_\theta log \pi_\theta(\tau) \right) ^2 \right)
+      - \left( \mathds{E} \left( \mathcal{R}(\tau)\nabla_\theta log \pi_\theta(\tau) \right)
+      + \mathds{E} \left( b \nabla_\theta log \pi_\theta(\tau) \right) \right) ^2
+\end{align*}

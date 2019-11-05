@@ -1,0 +1,28 @@
+
+\begin{align*}
+    &\left\| V^{\pi}_{\hat{M}} - V^{\pi}_M \right\|_\infty
+    = max_s \abs{ \left( V_{\hat{M}}(s) - V_M(s) \right) } \\
+    &= max_s \abs{ \left( max_a \sum_{s'} \hat{\mathds{T}}(s,a)(s') \left( \hat{\mathcal{R}}(s,a) + \gamma V_{\hat{M}}(s') \right)
+               - max_a \sum_{s'} \mathds{T}(s,a)(s') \left( \mathcal{R}(s,a) + \gamma V_M(s') \right) \right) } \\
+    &\leq max_s max_a \abs{ \left( \sum_{s'} \hat{\mathds{T}}(s,a)(s') \left( \hat{\mathcal{R}}(s,a) + \gamma V_{\hat{M}}(s') \right)
+               - \sum_{s'} \mathds{T}(s,a)(s') \left( \mathcal{R}(s,a) + \gamma V_M(s') \right) \right) } \\
+    &\leq max_{s,a} \abs{ \sum_{s'} \left( \hat{\mathds{T}}(s,a)(s') \left( \hat{\mathcal{R}}(s,a) + \gamma V_{\hat{M}}(s') \right)
+               - \mathds{T}(s,a)(s') \left( \mathcal{R}(s,a) + \gamma V_M(s') \right) \right) } \\
+    &\leq max_{s,a} \abs{ \sum_{s'} \left( \hat{\mathds{T}}(s,a)(s') \hat{\mathcal{R}}(s,a) + \hat{\mathds{T}}(s,a)(s') \gamma V_{\hat{M}}(s')
+               - \mathds{T}(s,a)(s') \mathcal{R}(s,a) - \mathds{T}(s,a)(s') \gamma V_M(s') \right) } \\
+    &\leq max_{s,a} \abs{ \left\| \hat{\mathds{T}}(s,a) \right\|_1 \hat{\mathcal{R}}(s,a) + \gamma \left\| \hat{\mathds{T}}(s,a) V_{\hat{M}} \right\|_1
+               - \left\| \mathds{T}(s,a) \right\|_1 \mathcal{R}(s,a) - \gamma \left\| \mathds{T}(s,a) V_M \right\|_1 } \\
+    &\leq max_{s,a} \abs{ \left\| \hat{\mathds{T}}(s,a) \right\|_1 \hat{\mathcal{R}}(s,a) + \gamma \left\| \hat{\mathds{T}}(s,a) \right\|_1 \left\| V_{\hat{M}} \right\|_\infty
+               - \left\| \mathds{T}(s,a) \right\|_1 \mathcal{R}(s,a) - \gamma \left\| \mathds{T}(s,a) \right\|_1 \left\| V_M \right\|_\infty } \\
+    &\leq max_{s,a} \abs{ \left\| \hat{\mathds{T}}(s,a)  \right\|_1 \hat{\mathcal{R}}(s,a) + \gamma \left\| V_{\hat{M}} \right\|_\infty
+               - \left\| \mathds{T}(s,a) \right\|_1 \mathcal{R}(s,a) - \gamma \left\| V_M \right\|_\infty } \\
+    &\leq max_{s,a} \abs{ \left\| \hat{\mathds{T}}(s,a)  \right\|_1 \hat{\mathcal{R}}(s,a)
+               - \left\| \mathds{T}(s,a) \right\|_1 \mathcal{R}(s,a) + \gamma \left\| V_{\hat{M}} - V_M \right\|_\infty } \\
+    &\leq max_{s,a} \abs{ \left\| \hat{\mathds{T}}(s,a)  \right\|_1 \hat{\mathcal{R}}(s,a)
+               - \left\| \mathds{T}(s,a) \right\|_1 \mathcal{R}(s,a) } + \gamma \left\| V_{\hat{M}} - V_M \right\|_\infty \\
+    &\leq \frac{1}{1 - \gamma} max_{s,a} \abs{ \left\| \hat{\mathds{T}}(s,a)  \right\|_1 \hat{\mathcal{R}}(s,a)
+               - \left\| \mathds{T}(s,a) \right\|_1 \mathcal{R}(s,a) } \\
+    &\leq \frac{1}{1 - \gamma} max_{s,a} \abs{ \hat{\mathcal{R}}(s,a) - \mathcal{R}(s,a) } \\
+    &\leq \frac{\epsilon_R}{1 - \gamma} \\
+    &\leq \frac{\epsilon_R}{1 - \gamma} + \frac{\epsilon_P}{(1 - \gamma)^2} \\
+\end{align*}
