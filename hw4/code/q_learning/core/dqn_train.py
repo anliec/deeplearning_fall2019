@@ -62,16 +62,14 @@ class DQNTrain(QNTrain):
         #####################################################################
         # TODO: Process state to match the return output specified above.
         #####################################################################
-        if len(state.shape) == 4:
-            batch, _, _, _ = state.shape
-            state = state.reshape((state.shape[0], -1))
-        elif len(state.shape) == 3:
-            state = state.reshape((1, -1))
-        elif len(state.shape) == 2 and state.shape[0] == 1:
+        if len(state.shape) == 3:
+            state = state.reshape((1,) + state.shape)
+        elif len(state.shape) == 4:
             pass
         else:
             raise NotImplementedError("invalid input shape: {}".format(state.shape))
-        state = torch.from_numpy(state).to(device=self.device)
+        state = torch.from_numpy(state).float().to(device=self.device)
+        state /= self.config.high
         #####################################################################
         #                             END OF YOUR CODE                      #
         #####################################################################
@@ -124,7 +122,15 @@ class DQNTrain(QNTrain):
         #       use the done_mask to compute Q_samp(s) from the equation
         #       specified above.
         #####################################################################
-        pass
+        q_target = self.target_q_net(next_state)
+        q_target_max_a = torch.max(q_target, dim=1).values
+        q = self.q_net(state)
+        q_a = torch.gather(q, 1, action.view((-1, 1))).squeeze()
+
+        q_samp = reward.clone().float()
+        q_samp += self.config.gamma * ((1.0 - done_mask) * q_target_max_a.reshape((-1)))
+
+        loss = ((q_samp - q_a)**2).sum()
         #####################################################################
         #                             END OF YOUR CODE                      #
         #####################################################################
@@ -134,14 +140,13 @@ class DQNTrain(QNTrain):
         """
         Update parametes of Q' with parameters of Q
         """
-        pass
         #####################################################################
         # TODO: Update the parameters of self.target_q_net with the
         # parameters of self.q_net, refer to the documentation of
         # torch.nn.Module.load_state_dict and torch.nn.Module.state_dict
         # This should just take 1-2 lines of code.
         #####################################################################
-        pass
+        self.target_q_net.load_state_dict(self.q_net.state_dict(), strict=True)
         #####################################################################
         #                             END OF YOUR CODE                      #
         #####################################################################
@@ -218,7 +223,17 @@ class DQNTrain(QNTrain):
         #   of the gradients using self.module_grad_norm on self.q_net
         #   AFTER calling backward.
         #####################################################################
-        pass
+        s_batch, sp_batch = [self.process_state(s) for s in [s_batch, sp_batch]]
+        a_batch, r_batch, done_mask_batch = [torch.from_numpy(a).to(self.device)
+                                             for a in [a_batch, r_batch, done_mask_batch]]
+        a_batch = a_batch.long()
+
+        q_loss = self.forward_loss(s_batch, a_batch, r_batch, sp_batch, done_mask_batch)
+
+        self.optimizer.zero_grad()
+        q_loss.backward()
+        grad_norm_eval = self.module_grad_norm(self.q_net)
+        self.optimizer.step()
         #####################################################################
         #                             END OF YOUR CODE                      #
         #####################################################################
