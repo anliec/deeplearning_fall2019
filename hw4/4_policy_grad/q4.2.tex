@@ -1,9 +1,40 @@
 
+With $J_b(\theta)$ the $J(\theta)$ function with $\mathcal{R}(\tau) := \mathcal{R}(\tau) + b$.
+
 \begin{align*}
-    Var(\nabla_\theta J(\theta))
+    Var(\nabla_\theta J_b(\theta))
     &= Var([\mathcal{R}(\tau) + b] \nabla_\theta log \pi_\theta(\tau)) \\
     &= \mathds{E} \left( \left( [\mathcal{R}(\tau) + b] \nabla_\theta log \pi_\theta(\tau) \right) ^2 \right) - \mathds{E} \left( [\mathcal{R}(\tau) + b] \nabla_\theta log \pi_\theta(\tau) \right)^2 \\
     &= \mathds{E} \left( \left( [\mathcal{R}(\tau)^2 + 2\mathcal{R}(\tau)b + b^2] (\nabla_\theta log \pi_\theta(\tau) \right) ^2 \right)
       - \left( \mathds{E} \left( \mathcal{R}(\tau)\nabla_\theta log \pi_\theta(\tau) \right)
-      + \mathds{E} \left( b \nabla_\theta log \pi_\theta(\tau) \right) \right) ^2
+      + \mathds{E} \left( b \nabla_\theta log \pi_\theta(\tau) \right) \right) ^2 \\
+    & \text{ with } f(\tau) = \nabla_\theta log \pi_\theta(\tau) \\
+    &= \mathds{E} \left( \mathcal{R}(\tau)^2 f(\tau)^2 \right) +
+       2b \mathds{E} \left( \mathcal{R}(\tau) f(\tau) \right) +
+       b^2 \mathds{E} \left( f(\tau)^2 \right) \\
+       &\text{ }- \mathds{E} \left( \mathcal{R}(\tau) f(\tau) \right)^2 -
+       2 \mathds{E} \left( \mathcal{R}(\tau) f(\tau) \right) \mathds{E} \left( b f(\tau) \right) -
+       b^2 \mathds{E} \left( f(\tau) \right)^2 \\
+    &= Var(\nabla_\theta J(\theta)) + b^2 Var(f(\tau)) + 2b \mathds{E} \left[ \mathcal{R}(\tau) f(\tau) \right] ( 1 - \mathds{E} \left[ f(\tau) \right])
 \end{align*}
+
+We are looking for the point where:
+
+\begin{align*}
+    2b Var(f(\tau)) + 2 \mathds{E} \left[ \mathcal{R}(\tau) f(\tau) \right] ( 1 - \mathds{E} \left[ f(\tau) \right]) &= 0 \\
+    \Leftrightarrow b Var(f(\tau)) &= - \mathds{E} \left[ \mathcal{R}(\tau) f(\tau) \right] ( 1 - \mathds{E} \left[ f(\tau) \right]) \\
+    \Leftrightarrow b  &= - \frac{\mathds{E} \left[ \mathcal{R}(\tau) f(\tau) \right] ( 1 - \mathds{E} \left[ f(\tau) \right])}{Var(f(\tau))} \\
+\end{align*}
+
+\paragraph{}
+For $Var(f(\tau)) \neq 0$.
+
+\paragraph{}
+In this case the variance is minimized when the rewards is being subtracted by $\frac{\mathds{E} \left[ \mathcal{R}(\tau) f(\tau) \right] ( 1 - \mathds{E} \left[ f(\tau) \right])}{Var(f(\tau))}$
+Please note that as defined before, we use here $\mathcal{R}(\tau) := \mathcal{R}(\tau) + b$, and so have a sign difference with the equation proposed in the homework.
+This allowed to prevent useless sign error during the development.
+
+\paragraph{}
+In addition, we can note that this value is difficult to compute and is going to evolve during training.
+So it would be impossible to get the minimum variance possible during all the training with a constant $b$.
+However it shows that using an approximation of $b$ will help to stabilise the training.

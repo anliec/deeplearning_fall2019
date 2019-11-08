@@ -7,5 +7,6 @@ zip -R hw4.zip \
     "q_learning/*.pdf"\
     "q_learning/*.py"\
     "q_learning/*/*.py"\
-    "dynamic_programming/*.ipynb.py"
+    "dynamic_programming/*.ipynb.py"\
+    "*/*.ipynb"
 echo "Submission file hw4.zip created."
