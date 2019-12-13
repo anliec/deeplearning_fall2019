@@ -14,8 +14,11 @@
 !*.csv
 !Makefile
 !requirements.txt
+!*.pdf
 
 !.gitignore
 
 .idea/
 __pycache__/
+.ipynb_checkpoints
+
